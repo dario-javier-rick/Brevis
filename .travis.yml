@@ -1,0 +1,16 @@
+language: csharp
+solution: "EstudiarEsElCamino.sln"
+install:
+- nuget restore EstudiarEsElCamino.sln
+- nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
+script:
+- msbuild /p:Configuration=Release EstudiarEsElCamino.sln
+- mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./EstudiarEsElCamino.Core.Test/bin/Release/EstudiarEsElCamino.Core.Test.dll
+notifications:
+  email:
+    recipients:
+      - videlariveronicolas@gmail.com
+      - alenelis@gmail.com
+      - rickdari@gmail.com
+    on_success: always # default: change
+    on_failure: always # default: always
