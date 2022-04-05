@@ -1,3 +1,4 @@
-# EstudiarEsElCamino
+# Estudiar es el camino
 
-Build status: ![example workflow](https://github.com/dario-javier-rick/EstudiarEsElCamino/actions/workflows/build-and-test.yml/badge.svg)
+![example workflow](https://github.com/dario-javier-rick/EstudiarEsElCamino/actions/workflows/build-and-test.yml/badge.svg)
+[![Coveralls][coveralls-image]][coveralls]
