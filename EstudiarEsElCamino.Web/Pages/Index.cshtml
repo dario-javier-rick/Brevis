@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Estudiar es el camino!</h1>
+
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            <input asp-for="File" type="file" />
+            <input type="submit" />
+        </form>
+    </div>
+</div>

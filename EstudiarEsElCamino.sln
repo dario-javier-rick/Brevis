@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstudiarEsElCamino.Core", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstudiarEsElCamino.Core.Test", "EstudiarEsElCamino.Core.Test\EstudiarEsElCamino.Core.Test.csproj", "{E3EA41DE-8607-4C2A-BF13-BF932F87185F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudiarEsElCamino.UI", "EstudiarEsElCamino.UI\EstudiarEsElCamino.UI.csproj", "{15701A4F-2890-4B8E-93C7-F6BE1C9DD88E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudiarEsElCamino.Web", "EstudiarEsElCamino.Web\EstudiarEsElCamino.Web.csproj", "{A6A54A82-7AE7-41F2-BB06-D136824439D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{E3EA41DE-8607-4C2A-BF13-BF932F87185F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3EA41DE-8607-4C2A-BF13-BF932F87185F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3EA41DE-8607-4C2A-BF13-BF932F87185F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{15701A4F-2890-4B8E-93C7-F6BE1C9DD88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15701A4F-2890-4B8E-93C7-F6BE1C9DD88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15701A4F-2890-4B8E-93C7-F6BE1C9DD88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15701A4F-2890-4B8E-93C7-F6BE1C9DD88E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A54A82-7AE7-41F2-BB06-D136824439D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A54A82-7AE7-41F2-BB06-D136824439D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A54A82-7AE7-41F2-BB06-D136824439D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A54A82-7AE7-41F2-BB06-D136824439D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
