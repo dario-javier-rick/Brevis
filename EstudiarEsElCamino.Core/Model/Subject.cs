@@ -1,4 +1,6 @@
-﻿namespace EstudiarEsElCamino.Core.Model
+﻿using System.Collections.Generic;
+
+namespace EstudiarEsElCamino.Core.Model
 {
     public class Subject
     {

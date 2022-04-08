@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using EstudiarEsElCamino.Core.BusinessProcess;
+using EstudiarEsElCamino.Core.Controllers;
+using EstudiarEsElCamino.Core.Model;
+using EstudiarEsElCamino.Core.Views;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -12,8 +14,6 @@ namespace EstudiarEsElCamino.Web.Pages
 {
     public class IndexModel : PageModel
     {
-        private SubjectBusinessProcess _subjectBusinessProcess { get; set; }
-
         public void OnGet()
         {
 
@@ -28,12 +28,18 @@ namespace EstudiarEsElCamino.Web.Pages
             var fileName = Path.GetFileName(File.FileName);
             var contentType = File.ContentType;
 
-            // to do something with the above data
-            //_subjectBusinessProcess....
+            // MVC Pattern
+            var model = new StudyPath();
+            var view = new StudyPathView();
+            var controller = new StudyPathController(view);
 
+            model.AttachObserver(controller);
+            model.AttachObserver(view);
 
             // to do : return something
-            throw new NotImplementedException();
+            var subjects = controller.GetCaminoCritico("{}"); //json de prueba. TODO: hacer mapping
+
+            return new JsonResult(subjects);
         }
     }
 }
