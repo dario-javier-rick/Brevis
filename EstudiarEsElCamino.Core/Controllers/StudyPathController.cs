@@ -23,9 +23,9 @@ namespace EstudiarEsElCamino.Core.Controllers
         /// </summary>
         /// <param name="json">JSON with the subjects, correlativities and subject status</param>
         /// <returns></returns>
-        public IEnumerable<Model.Subject> GetCaminoCritico(string json)
+        public IEnumerable<Model.Subject> GetCriticalStudyPath(string json)
         {
-            return model.GetCaminoCritico(json);
+            return model.GetCriticalStudyPath(json);
         }
     }
 }

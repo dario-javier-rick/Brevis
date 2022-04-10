@@ -36,9 +36,9 @@ namespace EstudiarEsElCamino.Core.Model
         /// </summary>
         /// <param name="json"></param>
         /// <returns></returns>
-        public IEnumerable<Subject> GetCaminoCritico(string json)
+        public IEnumerable<Subject> GetCriticalStudyPath(string json)
         {
-            if(json == "{}")
+            if (json == "{}")
             {
                 throw new ArgumentException();
             }

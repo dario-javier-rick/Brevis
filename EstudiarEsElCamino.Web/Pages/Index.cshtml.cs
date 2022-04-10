@@ -37,7 +37,7 @@ namespace EstudiarEsElCamino.Web.Pages
             //model.AttachObserver(view);
 
             // to do : return something
-            var subjects = controller.GetCaminoCritico("{}"); //json de prueba. TODO: hacer mapping
+            var subjects = controller.GetCriticalStudyPath("{}"); //json de prueba. TODO: hacer mapping
             model.Notify();
 
             return new JsonResult(subjects);

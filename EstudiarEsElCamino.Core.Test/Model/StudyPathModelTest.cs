@@ -19,7 +19,7 @@ namespace EstudiarEsElCamino.Core.Test.Model
         [Test]
         public void EmptyJsonTest()
         {
-            Assert.Throws<ArgumentException>(() => { model.GetCaminoCritico("{}"); });
+            Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
         }
     }
 }
