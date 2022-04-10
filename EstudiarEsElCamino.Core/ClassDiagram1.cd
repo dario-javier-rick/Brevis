@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EstudiarEsElCamino.Core.Model.SubjectStatus" Collapsed="true">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\SubjectStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EstudiarEsElCamino.Core.Model.Correlativities" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Correlativities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EstudiarEsElCamino.Core.Model.StudyPath">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAEAQAAAAgABAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\StudyPath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EstudiarEsElCamino.Core.Model.StudyPlan">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\StudyPlan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EstudiarEsElCamino.Core.Model.Subject" Collapsed="true">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Subject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

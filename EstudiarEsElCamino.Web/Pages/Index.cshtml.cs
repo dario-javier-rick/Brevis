@@ -30,14 +30,15 @@ namespace EstudiarEsElCamino.Web.Pages
 
             // MVC Pattern
             var model = new StudyPath();
-            var view = new StudyPathView();
+            var view = new StudyPathView(model);
             var controller = new StudyPathController(view);
 
             model.AttachObserver(controller);
-            model.AttachObserver(view);
+            //model.AttachObserver(view);
 
             // to do : return something
             var subjects = controller.GetCaminoCritico("{}"); //json de prueba. TODO: hacer mapping
+            model.Notify();
 
             return new JsonResult(subjects);
         }
