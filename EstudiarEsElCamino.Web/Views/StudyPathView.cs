@@ -1,9 +1,7 @@
-﻿using EstudiarEsElCamino.Core.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using EstudiarEsElCamino.Core;
+using EstudiarEsElCamino.Core.Model;
 
-namespace EstudiarEsElCamino.Core.Views
+namespace EstudiarEsElCamino.Web.Views
 {
     public class StudyPathView : Observer
     {

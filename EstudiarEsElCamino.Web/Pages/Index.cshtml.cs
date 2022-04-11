@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Threading.Tasks;
-using EstudiarEsElCamino.Core.Controllers;
 using EstudiarEsElCamino.Core.Model;
-using EstudiarEsElCamino.Core.Views;
+using EstudiarEsElCamino.Web.Controllers;
+using EstudiarEsElCamino.Web.Views;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

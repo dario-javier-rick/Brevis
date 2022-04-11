@@ -1,10 +1,9 @@
-﻿using EstudiarEsElCamino.Core.Model;
-using EstudiarEsElCamino.Core.Views;
-using System;
+﻿using EstudiarEsElCamino.Core;
+using EstudiarEsElCamino.Core.Model;
+using EstudiarEsElCamino.Web.Views;
 using System.Collections.Generic;
-using System.Text;
 
-namespace EstudiarEsElCamino.Core.Controllers
+namespace EstudiarEsElCamino.Web.Controllers
 {
     public class StudyPathController : Observer
     {
@@ -23,7 +22,7 @@ namespace EstudiarEsElCamino.Core.Controllers
         /// </summary>
         /// <param name="json">JSON with the subjects, correlativities and subject status</param>
         /// <returns></returns>
-        public IEnumerable<Model.Subject> GetCriticalStudyPath(string json)
+        public IEnumerable<Subject> GetCriticalStudyPath(string json)
         {
             return model.GetCriticalStudyPath(json);
         }
