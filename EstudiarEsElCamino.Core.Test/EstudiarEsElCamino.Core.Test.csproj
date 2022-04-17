@@ -20,8 +20,4 @@
     <ProjectReference Include="..\EstudiarEsElCamino.Core\EstudiarEsElCamino.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mocks\" />
-  </ItemGroup>
-
 </Project>
