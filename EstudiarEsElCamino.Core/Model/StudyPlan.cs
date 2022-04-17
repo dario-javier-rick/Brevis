@@ -1,8 +1,7 @@
 ﻿namespace EstudiarEsElCamino.Core.Model
 {
-    using Newtonsoft.Json.Linq;
+    using System.Linq;
     using System.Collections.Generic;
-    using System.IO;
 
     public class StudyPlan
     {
@@ -14,11 +13,10 @@
             this.Correlativities = correlativities;
         }
 
-        public StudyPlan ReadStudyPlanFromJson(string path) 
+        public StudyPlan DifferenceWith(StudyPlan fromCompare) 
         {
-            var jsonStringFromFile = File.ReadAllText(path);
-            var studyPlanFromJson = Newtonsoft.Json.JsonConvert.DeserializeObject<StudyPlan>(jsonStringFromFile);
-            return studyPlanFromJson;
+            var correlativitiesIntersection = fromCompare.Correlativities.Except(this.Correlativities, new CorrelativitiesComparer());
+            return new StudyPlan(correlativitiesIntersection);
         }
     }
 }
