@@ -1,0 +1,25 @@
+[
+  {
+    "subject": {
+      "code": "00",
+      "name": "Introduccion: a la Programacion"
+    },
+      "correlativities": []
+  },
+  {
+    "subject": {
+      "code": "01",
+      "name": "Programacion I"
+    },
+    "correlativities": [
+      {
+        "subject": {
+          "code": "00",
+          "name": "Introduccion: a la Programacion"
+        },
+        "correlativities": []
+      }
+    ]
+  }
+
+]

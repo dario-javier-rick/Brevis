@@ -5,12 +5,11 @@
     public class StudyPlan
     {
 
-        IEnumerable<Correlativities> correlativities;
+        public IEnumerable<Correlativities> Correlativities;
 
         public StudyPlan(IEnumerable<Correlativities> correlativities)
         {
-            this.correlativities = correlativities;
+            this.Correlativities = correlativities;
         }
-
     }
 }
