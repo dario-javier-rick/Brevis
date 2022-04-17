@@ -1,6 +1,4 @@
-﻿
-
-namespace EstudiarEsElCamino.Core.Model
+﻿namespace EstudiarEsElCamino.Core.Model
 {
     using System;
     using System.Collections.Generic; 

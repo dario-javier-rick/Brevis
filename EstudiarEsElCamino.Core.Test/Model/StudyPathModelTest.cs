@@ -21,5 +21,23 @@
         {
             Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
         }
+
+        [Test]
+        public void EstudianteSinMateriasAprobadas()
+        {
+            Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
+        }
+
+        [Test]
+        public void EstudianteConTodasLasMateriasAprobadas()
+        {
+            Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
+        }
+
+        [Test]
+        public void EstudianteConAlMenosUnaMateriaAprobada()
+        {
+            Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
+        }
     }
 }
