@@ -1,7 +1,6 @@
 ﻿namespace EstudiarEsElCamino.Core
 {
     using EstudiarEsElCamino.Core.Model;
-    using System;
     using System.Collections.Generic;
     using System.IO;
     public class StudyPlanReader

@@ -13,10 +13,10 @@
             this.Correlativities = correlativities;
         }
 
-        public StudyPlan DifferenceWith(StudyPlan fromCompare) 
+        public StudyPlan DifferenceWith(StudyPlan anotherStudyPlan) 
         {
-            var correlativitiesIntersection = fromCompare.Correlativities.Except(this.Correlativities, new CorrelativitiesComparer());
-            return new StudyPlan(correlativitiesIntersection);
+            var correlativitiesDifference = anotherStudyPlan.Correlativities.Except(this.Correlativities, new CorrelativitiesComparer());
+            return new StudyPlan(correlativitiesDifference);
         }
     }
 }
