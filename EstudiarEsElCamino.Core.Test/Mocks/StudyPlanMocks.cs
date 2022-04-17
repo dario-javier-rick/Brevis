@@ -11,9 +11,18 @@
             CorrelativitiesMocks.introduccionALaProgramacion
         });
 
-        public static StudyPlan StudyPlanWithTwoCorrelativitie = new StudyPlan(new List<Correlativities>()
+        public static StudyPlan StudyPlanWithTwoCorrelativities = new StudyPlan(new List<Correlativities>()
         {
-            CorrelativitiesMocks.introduccionALaProgramacion
+            CorrelativitiesMocks.introduccionALaProgramacion,
+            CorrelativitiesMocks.ProgramacionI
+        });
+
+
+        public static StudyPlan StudyPlanWithThreeCorrelativities = new StudyPlan(new List<Correlativities>()
+        {
+            CorrelativitiesMocks.introduccionALaProgramacion,
+            CorrelativitiesMocks.ProgramacionI,
+            CorrelativitiesMocks.ProgramacionII
         });
     }
 }

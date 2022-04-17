@@ -5,17 +5,16 @@
 
     public class StudyPlan
     {
+        public ICollection<Correlativities> Correlativities;
 
-        public IEnumerable<Correlativities> Correlativities;
-
-        public StudyPlan(IEnumerable<Correlativities> correlativities)
+        public StudyPlan(ICollection<Correlativities> correlativities)
         {
             this.Correlativities = correlativities;
         }
 
         public StudyPlan DifferenceWith(StudyPlan anotherStudyPlan) 
         {
-            var correlativitiesDifference = anotherStudyPlan.Correlativities.Except(this.Correlativities, new CorrelativitiesComparer());
+            var correlativitiesDifference = anotherStudyPlan.Correlativities.Except(this.Correlativities, new CorrelativitiesComparer()).ToList();
             return new StudyPlan(correlativitiesDifference);
         }
     }

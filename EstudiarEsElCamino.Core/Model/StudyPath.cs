@@ -35,7 +35,7 @@
         /// </summary>
         /// <param name="json"></param>
         /// <returns></returns>
-        public IEnumerable<Subject> GetCriticalStudyPath(string json)
+        public ICollection<Subject> GetCriticalStudyPath(string json)
         {
             if (json == "{}")
             {

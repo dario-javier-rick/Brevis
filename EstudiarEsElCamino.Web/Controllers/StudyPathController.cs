@@ -22,7 +22,7 @@ namespace EstudiarEsElCamino.Web.Controllers
         /// </summary>
         /// <param name="json">JSON with the subjects, correlativities and subject status</param>
         /// <returns></returns>
-        public IEnumerable<Subject> GetCriticalStudyPath(string json)
+        public ICollection<Subject> GetCriticalStudyPath(string json)
         {
             return model.GetCriticalStudyPath(json);
         }
