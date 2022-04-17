@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace EstudiarEsElCamino.Core.Model
+﻿namespace EstudiarEsElCamino.Core.Model
 {
+    using System.Collections.Generic;
+
     public class Correlativities
     {
         public Subject Subject;

@@ -1,12 +1,10 @@
-﻿using EstudiarEsElCamino.Core.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EstudiarEsElCamino.Core.Model
+﻿namespace EstudiarEsElCamino.Core.Model
 {
+    using System.Collections.Generic;
+    
     public class StudyPlan
     {
+
         IEnumerable<Correlativities> correlativities;
 
         public StudyPlan(IEnumerable<Correlativities> correlativities)

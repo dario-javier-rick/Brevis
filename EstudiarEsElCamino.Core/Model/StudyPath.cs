@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
 namespace EstudiarEsElCamino.Core.Model
 {
+    using System;
+    using System.Collections.Generic; 
+
     public class StudyPath
     {
         IList<Observer> observers;

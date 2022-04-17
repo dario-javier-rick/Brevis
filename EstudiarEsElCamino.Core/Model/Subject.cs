@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace EstudiarEsElCamino.Core.Model
+﻿namespace EstudiarEsElCamino.Core.Model
 {
     public class Subject
     {

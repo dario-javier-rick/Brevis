@@ -1,11 +1,11 @@
-﻿using EstudiarEsElCamino.Core.Model;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EstudiarEsElCamino.Core.Test.Model
+﻿namespace EstudiarEsElCamino.Core.Test.Model
 {
+    using EstudiarEsElCamino.Core.Model;
+    using NUnit.Framework;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class StudyPathModelTest
     {
         StudyPath model;
