@@ -4,25 +4,35 @@
     using System.Collections.Generic;
     public static class StudyPlanMocks
     {
-        public static StudyPlan EmptyStudyPlan = new StudyPlan(new List<Correlativities>() { });
+        public static StudyPlan EmptyStudyPlan()
+        { return new StudyPlan(new List<Correlativities>() { }); }
 
-        public static StudyPlan StudyPlanWithOneCorrelativitie = new StudyPlan(new List<Correlativities>()
+        public static StudyPlan StudyPlanWithOneCorrelativitie()
         {
-            CorrelativitiesMocks.introduccionALaProgramacion
-        });
+            return new StudyPlan(new List<Correlativities>()
+            {
+                CorrelativitiesMocks.introduccionALaProgramacion
+            });
+        }
 
-        public static StudyPlan StudyPlanWithTwoCorrelativities = new StudyPlan(new List<Correlativities>()
+        public static StudyPlan StudyPlanWithTwoCorrelativities()
         {
-            CorrelativitiesMocks.introduccionALaProgramacion,
-            CorrelativitiesMocks.ProgramacionI
-        });
+            return new StudyPlan(new List<Correlativities>()
+            {
+                CorrelativitiesMocks.introduccionALaProgramacion,
+                CorrelativitiesMocks.ProgramacionI
+            });
+        }
 
 
-        public static StudyPlan StudyPlanWithThreeCorrelativities = new StudyPlan(new List<Correlativities>()
+        public static StudyPlan StudyPlanWithThreeCorrelativities()
         {
-            CorrelativitiesMocks.introduccionALaProgramacion,
-            CorrelativitiesMocks.ProgramacionI,
-            CorrelativitiesMocks.ProgramacionII
-        });
+            return new StudyPlan(new List<Correlativities>()
+            {
+                CorrelativitiesMocks.introduccionALaProgramacion,
+                CorrelativitiesMocks.ProgramacionI,
+                CorrelativitiesMocks.ProgramacionII
+            });
+        }
     }
 }

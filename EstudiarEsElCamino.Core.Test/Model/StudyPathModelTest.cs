@@ -6,6 +6,7 @@
     using System.Collections.Generic;
     using System.Text;
 
+    [TestFixture]
     public class StudyPathModelTest
     {
         StudyPath model;
