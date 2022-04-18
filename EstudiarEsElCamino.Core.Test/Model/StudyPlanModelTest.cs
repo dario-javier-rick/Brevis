@@ -1,9 +1,9 @@
 ﻿
-using EstudiarEsElCamino.Core.Model;
-using EstudiarEsElCamino.Core.Test.Mocks;
-using NUnit.Framework;
 namespace EstudiarEsElCamino.Core.Test.Model
 {
+    using EstudiarEsElCamino.Core.Model;
+    using EstudiarEsElCamino.Core.Test.Mocks;
+    using NUnit.Framework;
     [TestFixture]
     public class StudyPlanModelTest
     {
