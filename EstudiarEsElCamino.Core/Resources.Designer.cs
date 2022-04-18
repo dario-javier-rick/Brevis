@@ -61,11 +61,20 @@ namespace EstudiarEsElCamino.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \StudyPlans\TecnicaturaSuperiorEnInformatica.json.
+        ///   Looks up a localized string similar to TecnicaturaSuperiorEnInformatica.json.
         /// </summary>
-        internal static string StudyPathDefault {
+        internal static string DefaultJson {
             get {
-                return ResourceManager.GetString("StudyPathDefault", resourceCulture);
+                return ResourceManager.GetString("DefaultJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to StudyPlans.
+        /// </summary>
+        internal static string StudyPlanFolder {
+            get {
+                return ResourceManager.GetString("StudyPlanFolder", resourceCulture);
             }
         }
     }

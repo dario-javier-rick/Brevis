@@ -1,25 +1,23 @@
-[
-  {
-    "subject": {
-      "code": "00",
-      "name": "Introduccion: a la Programacion"
+{
+  "Correlativities": [
+    {
+      "Subject": {
+        "Code": "00",
+        "Name": "Introduccion: a la Programacion"
+      },
+      "CorrelativeSubjects": []
     },
-      "correlativities": []
-  },
-  {
-    "subject": {
-      "code": "01",
-      "name": "Programacion I"
-    },
-    "correlativities": [
-      {
-        "subject": {
-          "code": "00",
-          "name": "Introduccion: a la Programacion"
-        },
-        "correlativities": []
-      }
-    ]
-  }
-
-]
+    {
+      "Subject": {
+        "Code": "01",
+        "Name": "Programacion I"
+      },
+      "CorrelativeSubjects": [
+        {
+          "Code": "00",
+          "Name": "Introduccion: a la Programacion"
+        }
+      ]
+    }
+  ]
+}

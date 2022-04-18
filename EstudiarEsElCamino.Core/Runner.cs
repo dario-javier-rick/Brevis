@@ -28,7 +28,7 @@
 
         public void ruuun(StudyPlan inputStudyPlan)
         {
-            var defaultStudyPlan = new StudyPlanReader().ReadStudyPlanFromJson();
+            var defaultStudyPlan = new StudyPlanReader().StudyPlanReaded;
             inputStudyPlan.RemoveFrom(defaultStudyPlan); 
             //TopologicalSort.Sort(inputStCorrelativities, x => x.CorrelativeSubjects);
         }

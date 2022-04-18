@@ -43,7 +43,7 @@
             }
             var Runner = new Runner();
             Runner.ruuun();
-            throw new NotImplementedException();
+            return null;//TODO: Temporary 
         }
     }
 }

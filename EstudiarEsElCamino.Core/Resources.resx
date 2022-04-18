@@ -117,7 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="StudyPathDefault" xml:space="preserve">
-    <value>\StudyPlans\TecnicaturaSuperiorEnInformatica.json</value>
+  <data name="DefaultJson" xml:space="preserve">
+    <value>TecnicaturaSuperiorEnInformatica.json</value>
+  </data>
+  <data name="StudyPlanFolder" xml:space="preserve">
+    <value>StudyPlans</value>
   </data>
 </root>

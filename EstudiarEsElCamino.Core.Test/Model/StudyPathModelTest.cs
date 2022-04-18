@@ -26,7 +26,7 @@
         [Test]
         public void EstudianteSinMateriasAprobadas()
         {
-            Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
+            model.GetCriticalStudyPath("{dsadsadasda}");
         }
 
         [Test]

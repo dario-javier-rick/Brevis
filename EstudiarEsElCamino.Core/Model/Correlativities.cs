@@ -6,6 +6,7 @@
     public class Correlativities
     {
         public Subject Subject;
+
         public ICollection<Subject> CorrelativeSubjects;
     }
 
@@ -13,17 +14,30 @@
     {
         public bool Equals(Correlativities x, Correlativities y)
         {
-            if (string.Equals(x.Subject.Name, y.Subject.Name, StringComparison.OrdinalIgnoreCase) &&
-                string.Equals(x.Subject.Code, y.Subject.Code, StringComparison.OrdinalIgnoreCase)) 
-            {
-                return true;
-            } 
-            return false;
+            return new SubjectComparer().Equals(x.Subject, y.Subject);
         }
 
         public int GetHashCode(Correlativities obj)
         {
             return obj.Subject.Code.GetHashCode();
+        }
+    }
+
+    public class SubjectComparer : IEqualityComparer<Subject>
+    {
+        public bool Equals(Subject x, Subject y)
+        {
+            if (string.Equals(x.Name, y.Name, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(x.Code, y.Code, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public int GetHashCode(Subject obj)
+        {
+            return obj.Code.GetHashCode();
         }
     }
 }

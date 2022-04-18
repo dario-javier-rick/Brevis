@@ -1,19 +1,23 @@
 ﻿namespace EstudiarEsElCamino.Core
 {
     using EstudiarEsElCamino.Core.Model;
-    using System.Collections.Generic;
     using System.IO;
+
     public class StudyPlanReader
     {
+        private string FilePath;
+        public StudyPlan StudyPlanReaded { get; set; }
+
         public StudyPlanReader()
         {
+            this.FilePath = buildPath();
+            var jsonStringFromFile = File.ReadAllText(this.FilePath);
+            this.StudyPlanReaded = Newtonsoft.Json.JsonConvert.DeserializeObject<StudyPlan>(jsonStringFromFile);
         }
-        public StudyPlan ReadStudyPlanFromJson()
+
+        private string buildPath()
         {
-            var path = string.Concat(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), Resources.StudyPathDefault);
-            var jsonStringFromFile = File.ReadAllText(path);
-            var correlativities = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Correlativities>>(jsonStringFromFile);
-            return new StudyPlan(correlativities);
+            return Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), Resources.StudyPlanFolder, Resources.DefaultJson);
         }
     }
 }
