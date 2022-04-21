@@ -34,7 +34,7 @@ namespace EstudiarEsElCamino.Core.Test.Model
         }
 
         [Test]
-        public void OneEmptyStudyPlanAnotherWithOneSubject_DifferenceWith_ReturnEmptyStudyPlan()
+        public void OneEmptyStudyPlanAnotherWithOneSubject_RemoveFrom_ReturnEmptyStudyPlan()
         {
             //Arrange
             this.studyPlan1 = StudyPlanMocks.StudyPlanWithOneCorrelativitie();
