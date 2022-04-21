@@ -42,5 +42,12 @@
       <FileName>Observer.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Interface Name="EstudiarEsElCamino.Core.IReaderFiles">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IReaderFiles.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

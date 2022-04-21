@@ -16,3 +16,4 @@ namespace EstudiarEsElCamino.Core
             return JsonSerializer.Deserialize<T>(text);
         }
     }
+}
