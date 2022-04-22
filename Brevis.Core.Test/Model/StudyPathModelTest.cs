@@ -1,11 +1,13 @@
-﻿namespace Brevis.Core.Test.Model
-{
-    using Brevis.Core.Model;
-    using NUnit.Framework;
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+﻿using Brevis.Core.Model;
+using Brevis.Core.Test.Mocks;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
+namespace Brevis.Core.Test.Model
+{
     [TestFixture]
     public class StudyPathModelTest
     {
@@ -17,28 +19,62 @@
             model = new StudyPath();
         }
 
-        //[Test]
-        //public void EmptyJsonTest()
-        //{
-        //    Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
-        //}
+        [Test]
+        public void EmptyCollectionTest()
+        {
+            var studyPlan = StudyPlanMocks.EmptyStudyPlan();
 
-        //[Test]
-        //public void EstudianteSinMateriasAprobadas()
-        //{
-        //    model.GetCriticalStudyPath("{dsadsadasda}");
-        //}
+            Assert.Throws<ArgumentException>(() =>
+            {
+                model.GetCriticalStudyPath(new Models.ProgressCarreer
+                {
+                    StudyPlan = studyPlan,
+                    ApprovedSubjects = null
+                });
+            });
+        }
 
-        //[Test]
-        //public void EstudianteConTodasLasMateriasAprobadas()
-        //{
-        //    Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
-        //}
+        [Test]
+        public void EstudianteSinMateriasAprobadas()
+        {
+            var studyPlan = StudyPlanMocks.StudyPlanWithOneCorrelativitie();
 
-        //[Test]
-        //public void EstudianteConAlMenosUnaMateriaAprobada()
-        //{
-        //    Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
-        //}
+            var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
+            {
+                StudyPlan = studyPlan,
+                ApprovedSubjects = new List<Subject>()
+            });
+
+            Assert.True(criticalPath.Count == studyPlan.Correlativities.Count);
+        }
+
+        [Test]
+        public void EstudianteConTodasLasMateriasAprobadas()
+        {
+            var studyPlan = StudyPlanMocks.StudyPlanWithOneCorrelativitie();
+            var allSubjects = studyPlan.Correlativities.Select(t => t.Subject);
+
+            var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
+            {
+                StudyPlan = studyPlan,
+                ApprovedSubjects = allSubjects
+            });
+
+            Assert.True(criticalPath.Count == 0);
+        }
+
+        [Test]
+        public void EstudianteConAlMenosUnaMateriaAprobada()
+        {
+            var studyPlan = StudyPlanMocks.StudyPlanWithTwoCorrelativities();
+
+            var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
+            {
+                StudyPlan = studyPlan,
+                ApprovedSubjects = new List<Subject> { CorrelativitiesMocks.IntroduccionALaProgramacion.Subject }
+            });
+
+            Assert.True(criticalPath.Count == 1);
+        }
     }
 }

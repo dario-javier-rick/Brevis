@@ -11,7 +11,7 @@
         {
             return new StudyPlan(new List<Correlativities>()
             {
-                CorrelativitiesMocks.introduccionALaProgramacion
+                CorrelativitiesMocks.IntroduccionALaProgramacion
             });
         }
 
@@ -19,7 +19,7 @@
         {
             return new StudyPlan(new List<Correlativities>()
             {
-                CorrelativitiesMocks.introduccionALaProgramacion,
+                CorrelativitiesMocks.IntroduccionALaProgramacion,
                 CorrelativitiesMocks.ProgramacionI
             });
         }
@@ -29,7 +29,7 @@
         {
             return new StudyPlan(new List<Correlativities>()
             {
-                CorrelativitiesMocks.introduccionALaProgramacion,
+                CorrelativitiesMocks.IntroduccionALaProgramacion,
                 CorrelativitiesMocks.ProgramacionI,
                 CorrelativitiesMocks.ProgramacionII
             });

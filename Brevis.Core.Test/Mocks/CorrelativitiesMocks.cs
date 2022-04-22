@@ -5,15 +5,16 @@
 
     public static class CorrelativitiesMocks
     {
-        public static Correlativities introduccionALaProgramacion = new Correlativities()
+        public static Correlativities IntroduccionALaProgramacion = new Correlativities()
         {
-            Subject = SubjectMocks.introduccionALaProgramacion,
+            Subject = SubjectMocks.IntroduccionALaProgramacion,
             CorrelativeSubjects = new List<Subject>()
         };
+
         public static Correlativities ProgramacionI = new Correlativities()
         {
             Subject = SubjectMocks.ProgramacionI,
-            CorrelativeSubjects = new List<Subject>() { SubjectMocks.introduccionALaProgramacion }
+            CorrelativeSubjects = new List<Subject>() { SubjectMocks.IntroduccionALaProgramacion }
         };
 
         public static Correlativities ProgramacionII = new Correlativities()
