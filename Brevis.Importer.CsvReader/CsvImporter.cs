@@ -11,7 +11,7 @@ namespace Brevis.Importer.CsvReader
         const string separator = ",";
         public ProgressCarreer Import<T>(string csvFile, ICollection<Correlativities> correlativities)
         {
-          
+
             List<Subject> subjects = new List<Subject>();
             StudyPlan studyPlan = new StudyPlan(correlativities);
 
@@ -19,25 +19,41 @@ namespace Brevis.Importer.CsvReader
             var headerLine = lines.First();
             var columns = headerLine.Split(separator).ToList().Select((v, i) => new { Position = i, Name = v });
             var dataLines = lines.Skip(1).ToList();
-            var type = typeof(T);
-            var props = type.GetProperties();
+//            var type = typeof(T);
+//            var props = type.GetProperties();
+//            var oprops = typeof(Subject).GetProperties();
 
             dataLines.ForEach(line =>
             {
-                T obj = (T)Activator.CreateInstance(type);
+//              T obj = (T)Activator.CreateInstance(type);
                 var data = line.Split(separator).ToList();
-                foreach (var prop in props)
+                int column = 0;
+                foreach (var code in data)
                 {
-                    var column = columns.SingleOrDefault(c => c.Name == prop.Name);
-                    var value = data[column.Position];
-                    if (column.Position == 1)
+                    column++;
+                    if (column == 2)
                     {
                         Subject subject = new Subject();
-                        subject.Code = value;
+                        subject.Code = code;
                         subjects.Add(subject);
+                        column = 0;
                     }
+
                 }
 
+                /*                foreach (var prop in props)
+                                {
+                                    var column = columns.SingleOrDefault(c => c.Name == prop.Name);
+                                    var value = data[column.Position];
+                                    if (column.Position == 1)
+                                    {
+
+                                        Subject subject = new Subject();
+                                        subject.Code = value;
+                                        subjects.Add(subject);
+                                    }
+                                }
+                */
             });
             ProgressCarreer progressCarreer = new ProgressCarreer();
             progressCarreer.StudyPlan = studyPlan;
