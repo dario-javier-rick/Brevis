@@ -10,7 +10,9 @@ namespace Brevis.Importer.CsvReader
         public ProgressCarreer Transform(object input)
         {
             //TODO by Ale :)
-
+            string file = @"Brevis.Files/approvedSubjects.csv";
+            var progressCarreer = new CsvImporter().Import<ProgressCarreer>(file);
+            System.Console.WriteLine(progressCarreer);
             throw new NotImplementedException();
         }
     }
