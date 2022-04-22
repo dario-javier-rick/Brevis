@@ -1,4 +1,4 @@
-# Estudiar es el camino
+# Brevis
 
 [![Build Status][gh-actions-image]][gh-actions]
 [![Coveralls][coveralls-image]][coveralls]
