@@ -5,6 +5,7 @@
 
     public class StudyPlan
     {
+        public string Code { get; set; }
         public ICollection<Correlativities> Correlativities;
 
         public StudyPlan(ICollection<Correlativities> correlativities)
