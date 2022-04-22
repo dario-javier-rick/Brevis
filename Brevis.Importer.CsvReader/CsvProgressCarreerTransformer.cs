@@ -13,7 +13,7 @@ namespace Brevis.Importer.CsvReader
 
             ICollection<Correlativities> correlativities = new List<Correlativities>();
             string file = @"../Brevis.Files/approved_subjects.csv";
-            //(string)input
+            //(string)input how catch file???
             var progressCarreer = new CsvImporter().Import<ProgressCarreer>(file, correlativities);
             return progressCarreer;
 
