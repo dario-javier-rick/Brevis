@@ -10,6 +10,7 @@ namespace Brevis.Importer.CsvReader
         public ProgressCarreer Transform(object input)
         {
             //TODO by Ale :)
+
             throw new NotImplementedException();
         }
     }
