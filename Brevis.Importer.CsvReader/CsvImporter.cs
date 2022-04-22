@@ -1,5 +1,8 @@
-﻿using Brevis.Core.Models;
+﻿using Brevis.Core.Model;
+using Brevis.Core.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Brevis.Importer.CsvReader
 {
@@ -27,19 +30,17 @@ namespace Brevis.Importer.CsvReader
                     var column = columns.SingleOrDefault(c => c.Name == prop.Name);
                     var value = data[column.Position];
                     //                    var typeOfProp = prop.PropertyType;
-                    if (column.Position == 0 && record = 0) // codigo de carrera
+                    if (column.Position == 0 && record == 0) // codigo de carrera
                     {
                         StudyPlan studyPlan = new StudyPlan();
                         prop.SetValue(obj, studyPlan);
 
-                    }
-                    if (column.Position == 1) // código de materia
-                    {
+                    } else {
                         Subject subject = new Subject();
                         subject.Code = value;
+                        prop.SetValue(obj, subject);
                     }
                     //                    prop.SetValue(obj, Convert.ChangeType(value, typeOfProp));
-                    prop.SetValue(obj, subject);
                 }
                 list.Add(obj);
             });
