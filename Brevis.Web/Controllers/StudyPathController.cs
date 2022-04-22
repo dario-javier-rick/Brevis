@@ -1,5 +1,4 @@
 ﻿using Brevis.Core;
-using Brevis.Core.Model;
 using Brevis.Core.Models;
 using Brevis.Web.Views;
 using System.Collections.Generic;

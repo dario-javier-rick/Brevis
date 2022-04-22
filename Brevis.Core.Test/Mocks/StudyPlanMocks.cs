@@ -1,6 +1,6 @@
 ﻿namespace Brevis.Core.Test.Mocks
 {
-    using Brevis.Core.Model;
+    using Brevis.Core.Models;
     using System.Collections.Generic;
     public static class StudyPlanMocks
     {

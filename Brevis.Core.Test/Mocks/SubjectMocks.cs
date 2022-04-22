@@ -1,6 +1,6 @@
 ﻿namespace Brevis.Core.Test.Mocks
 {
-    using Brevis.Core.Model;
+    using Brevis.Core.Models;
     public static class SubjectMocks
     {
         public static Subject IntroduccionALaProgramacion = new Subject() { Name = "Introduccion a la programacion", Code = "00" };

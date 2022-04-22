@@ -1,7 +1,7 @@
 ﻿
 namespace Brevis.Core.Test.Model
 {
-    using Brevis.Core.Model;
+    using Brevis.Core.Models;
     using Brevis.Core.Test.Mocks;
     using NUnit.Framework;
     [TestFixture]

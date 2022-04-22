@@ -1,5 +1,5 @@
 ﻿using Brevis.Core;
-using Brevis.Core.Model;
+using Brevis.Core.Models;
 
 namespace Brevis.Web.Views
 {

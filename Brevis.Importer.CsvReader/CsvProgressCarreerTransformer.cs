@@ -11,7 +11,7 @@ namespace Brevis.Importer.CsvReader
         {
             //TODO by Ale :)
 
-            Correlativities correlativities = (Correlativities)input;
+            ICollection<Correlativities> correlativities = (ICollection<Correlativities>)input;
             string file = @"Brevis.Files/approvedSubjects.csv";
             var progressCarreer = new CsvImporter().Import<ProgressCarreer>(file, correlativities);
             return progressCarreer;

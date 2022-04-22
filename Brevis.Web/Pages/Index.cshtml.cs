@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 using Brevis.Core;
-using Brevis.Core.Model;
+using Brevis.Core.Models;
 using Brevis.Web.Controllers;
 using Brevis.Web.Views;
 using Microsoft.AspNetCore.Http;
