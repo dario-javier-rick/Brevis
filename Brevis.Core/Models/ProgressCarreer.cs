@@ -1,5 +1,4 @@
-﻿using Brevis.Core.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Brevis.Core.Models
 {

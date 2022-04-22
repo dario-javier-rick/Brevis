@@ -10,10 +10,12 @@ namespace Brevis.Importer.CsvReader
         public ProgressCarreer Transform(object input)
         {
             //TODO by Ale :)
+
+            Correlativities correlativities = (Correlativities)input;
             string file = @"Brevis.Files/approvedSubjects.csv";
-            var progressCarreer = new CsvImporter().Import<ProgressCarreer>(file);
-            System.Console.WriteLine(progressCarreer);
-            throw new NotImplementedException();
+            var progressCarreer = new CsvImporter().Import<ProgressCarreer>(file, correlativities);
+            return progressCarreer;
+
         }
     }
 }

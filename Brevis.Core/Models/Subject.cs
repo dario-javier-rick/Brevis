@@ -1,4 +1,4 @@
-﻿namespace Brevis.Core.Model
+﻿namespace Brevis.Core.Models
 {
     public class Subject
     {
