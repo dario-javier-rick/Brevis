@@ -1,0 +1,2 @@
+File needed to be able to commit this empty folder to git.
+The folder will be filled with the dlls during the build of Brevis.sln.
