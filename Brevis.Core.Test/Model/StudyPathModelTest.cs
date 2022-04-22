@@ -17,28 +17,28 @@
             model = new StudyPath();
         }
 
-        [Test]
-        public void EmptyJsonTest()
-        {
-            Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
-        }
+        //[Test]
+        //public void EmptyJsonTest()
+        //{
+        //    Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
+        //}
 
-        [Test]
-        public void EstudianteSinMateriasAprobadas()
-        {
-            model.GetCriticalStudyPath("{dsadsadasda}");
-        }
+        //[Test]
+        //public void EstudianteSinMateriasAprobadas()
+        //{
+        //    model.GetCriticalStudyPath("{dsadsadasda}");
+        //}
 
-        [Test]
-        public void EstudianteConTodasLasMateriasAprobadas()
-        {
-            Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
-        }
+        //[Test]
+        //public void EstudianteConTodasLasMateriasAprobadas()
+        //{
+        //    Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
+        //}
 
-        [Test]
-        public void EstudianteConAlMenosUnaMateriaAprobada()
-        {
-            Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
-        }
+        //[Test]
+        //public void EstudianteConAlMenosUnaMateriaAprobada()
+        //{
+        //    Assert.Throws<ArgumentException>(() => { model.GetCriticalStudyPath("{}"); });
+        //}
     }
 }

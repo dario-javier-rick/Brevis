@@ -1,7 +1,8 @@
 ﻿namespace Brevis.Core.Model
 {
+    using Brevis.Core.Models;
     using System;
-    using System.Collections.Generic; 
+    using System.Collections.Generic;
 
     public class StudyPath
     {
@@ -35,12 +36,12 @@
         /// </summary>
         /// <param name="json"></param>
         /// <returns></returns>
-        public ICollection<Subject> GetCriticalStudyPath(string json)
+        public ICollection<Subject> GetCriticalStudyPath(ProgressCarreer progressCarreer)
         {
-            if (json == "{}")
-            {
-                throw new ArgumentException();
-            }
+            //if (json == "{}")
+            //{
+            //    throw new ArgumentException();
+            //}
             var Runner = new Runner();
             Runner.ruuun();
             return null;//TODO: Temporary 

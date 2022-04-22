@@ -8,7 +8,5 @@ namespace Brevis.Core
     {
         string FileType();
         string BuildPath();
-
     }
-    
 }
