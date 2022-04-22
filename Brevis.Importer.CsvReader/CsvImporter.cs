@@ -9,7 +9,7 @@ namespace Brevis.Importer.CsvReader
     {
         //https://www.writeafunction.com/generic-method-to-import-csv-data-into-a-list-in-csharp/
         const string separator = ",";
-        public ProgressCarreer Import<T>(string csvFile, Correlativities correlativities)
+        public ProgressCarreer Import<T>(string csvFile, ICollection<Correlativities> correlativities)
         {
           
             List<Subject> subjects = new List<Subject>();
