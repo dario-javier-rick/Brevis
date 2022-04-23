@@ -29,12 +29,12 @@
         public void ruuun(StudyPlan inputStudyPlan)
         {
             var defaultStudyPlan = new StudyPlanReader().StudyPlanReaded;
-            inputStudyPlan.RemoveFrom(defaultStudyPlan); 
+            inputStudyPlan.RemoveFrom(defaultStudyPlan);
             //TopologicalSort.Sort(inputStCorrelativities, x => x.CorrelativeSubjects);
         }
     }
 
-    public static class TopologicalSort 
+    public static class TopologicalSort
     {
         public static IList<T> Sort<T>(this ICollection<T> source, Func<T, ICollection<T>> getDependencies)
         {
@@ -74,11 +74,9 @@
                         Visit(dependency, getDependencies, sorted, visited);
                     }
                 }
-
                 visited[item] = false;
                 sorted.Add(item);
             }
         }
-
-    }
+    }   
 }

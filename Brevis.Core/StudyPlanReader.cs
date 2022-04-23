@@ -5,19 +5,22 @@
 
     public class StudyPlanReader
     {
-        private string FilePath;
+        public string FilePath;
         public StudyPlan StudyPlanReaded { get; set; }
 
         public StudyPlanReader()
         {
-            this.FilePath = buildPath();
+            setFilePath();
             var jsonStringFromFile = File.ReadAllText(this.FilePath);
             this.StudyPlanReaded = Newtonsoft.Json.JsonConvert.DeserializeObject<StudyPlan>(jsonStringFromFile);
         }
 
-        private string buildPath()
+        private void setFilePath()
         {
-            return Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), Resources.StudyPlanFolder, Resources.DefaultJson);
+            this.FilePath = Path.Combine(
+                Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location),
+                Resources.StudyPlanFolder,
+                Resources.DefaultJson);
         }
     }
 }
