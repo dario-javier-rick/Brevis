@@ -9,56 +9,30 @@ namespace Brevis.Importer.CsvReader
     {
         //https://www.writeafunction.com/generic-method-to-import-csv-data-into-a-list-in-csharp/
         const string separator = ",";
-        public ProgressCarreer Import<T>(string csvFile, ICollection<Correlativities> correlativities)
+        public ProgressCarreer Import<T>(string csvFile)
         {
-
             List<Subject> subjects = new List<Subject>();
-            StudyPlan studyPlan = new StudyPlan(correlativities);
-
             var lines = System.IO.File.ReadAllLines(csvFile);
-            var headerLine = lines.First();
-            var columns = headerLine.Split(separator).ToList().Select((v, i) => new { Position = i, Name = v });
             var dataLines = lines.Skip(1).ToList();
-//            var type = typeof(T);
-//            var props = type.GetProperties();
-//            var oprops = typeof(Subject).GetProperties();
-
-            dataLines.ForEach(line =>
+            dataLines.ToList().ForEach(line => 
             {
-//              T obj = (T)Activator.CreateInstance(type);
-                var data = line.Split(separator).ToList();
-                int column = 0;
-                foreach (var code in data)
+                var lineWithData = line.Split(separator).ToList();
+                foreach (var item in lineWithData)
                 {
-                    column++;
-                    if (column == 2)
-                    {
-                        Subject subject = new Subject();
-                        subject.Code = code;
-                        subjects.Add(subject);
-                        column = 0;
-                    }
-
+                    subjects.Add(new Subject { Code = item });
                 }
-
-                /*                foreach (var prop in props)
-                                {
-                                    var column = columns.SingleOrDefault(c => c.Name == prop.Name);
-                                    var value = data[column.Position];
-                                    if (column.Position == 1)
-                                    {
-
-                                        Subject subject = new Subject();
-                                        subject.Code = value;
-                                        subjects.Add(subject);
-                                    }
-                                }
-                */
             });
-            ProgressCarreer progressCarreer = new ProgressCarreer();
-            progressCarreer.StudyPlan = studyPlan;
-            progressCarreer.ApprovedSubjects = subjects;
+            ProgressCarreer progressCarreer = new ProgressCarreer
+            {
+                StudyPlanCode = getStudyPlanCode(lines),
+                ApprovedSubjects = subjects
+            };
             return progressCarreer;
+        }
+        private string getStudyPlanCode(string[] lines)
+        {
+            var StudyPlanCode = lines[1].Split(separator)[1];
+            return StudyPlanCode;
         }
     }
 }

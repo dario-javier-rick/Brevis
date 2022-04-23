@@ -28,7 +28,7 @@ namespace Brevis.Core.Test.Model
             {
                 model.GetCriticalStudyPath(new Models.ProgressCarreer
                 {
-                    StudyPlan = studyPlan,
+                    StudyPlanCode = "",
                     ApprovedSubjects = null
                 });
             });
@@ -41,7 +41,7 @@ namespace Brevis.Core.Test.Model
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
-                StudyPlan = studyPlan,
+                StudyPlanCode = "",
                 ApprovedSubjects = new List<Subject>()
             });
 
@@ -56,7 +56,7 @@ namespace Brevis.Core.Test.Model
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
-                StudyPlan = studyPlan,
+                StudyPlanCode = "",
                 ApprovedSubjects = allSubjects
             });
 
@@ -70,7 +70,7 @@ namespace Brevis.Core.Test.Model
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
-                StudyPlan = studyPlan,
+                StudyPlanCode = "",
                 ApprovedSubjects = new List<Subject> { CorrelativitiesMocks.IntroduccionALaProgramacion.Subject }
             });
 
