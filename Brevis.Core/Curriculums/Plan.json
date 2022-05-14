@@ -1,0 +1,32 @@
+{
+  "Correlativities": [
+    {
+      "Subject": {
+        "Code": "01",
+        "Name": "A"
+      },
+
+      "CorrelativeSubjects": []
+
+    },
+    {
+      "Subject": {
+        "Code": "02",
+        "Name": "B"
+      },
+      "CorrelativeSubjects": []
+    },
+    {
+      "Subject": {
+        "Code": "03",
+        "Name": "C"
+      },
+      "CorrelativeSubjects": [
+        {
+          "Code": "01",
+          "Name": "A"
+        }
+      ],
+    }
+  ]
+}
