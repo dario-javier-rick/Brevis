@@ -2,22 +2,22 @@
 {
     using Brevis.Core.Models;
     using System.Collections.Generic;
-    public static class StudyPlanMocks
+    public static class CurriculumMocks
     {
-        public static StudyPlan EmptyStudyPlan()
-        { return new StudyPlan(new List<Correlativities>() { }); }
+        public static Curriculum EmptyCurriculum()
+        { return new Curriculum(new List<Correlativities>() { }); }
 
-        public static StudyPlan StudyPlanWithOneCorrelativitie()
+        public static Curriculum CurriculumWithOneCorrelativitie()
         {
-            return new StudyPlan(new List<Correlativities>()
+            return new Curriculum(new List<Correlativities>()
             {
                 CorrelativitiesMocks.IntroduccionALaProgramacion
             });
         }
 
-        public static StudyPlan StudyPlanWithTwoCorrelativities()
+        public static Curriculum CurriculumWithTwoCorrelativities()
         {
-            return new StudyPlan(new List<Correlativities>()
+            return new Curriculum(new List<Correlativities>()
             {
                 CorrelativitiesMocks.IntroduccionALaProgramacion,
                 CorrelativitiesMocks.ProgramacionI
@@ -25,9 +25,9 @@
         }
 
 
-        public static StudyPlan StudyPlanWithThreeCorrelativities()
+        public static Curriculum CurriculumWithThreeCorrelativities()
         {
-            return new StudyPlan(new List<Correlativities>()
+            return new Curriculum(new List<Correlativities>()
             {
                 CorrelativitiesMocks.IntroduccionALaProgramacion,
                 CorrelativitiesMocks.ProgramacionI,

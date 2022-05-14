@@ -9,7 +9,7 @@ using System.Text;
 namespace Brevis.Core.Test.Model
 {
     [TestFixture]
-    public class StudyPathModelTest
+    public class CurriculumModelTest
     {
         StudyPath model;
 
@@ -22,7 +22,7 @@ namespace Brevis.Core.Test.Model
         [Test]
         public void EmptyCollectionTest()
         {
-            var studyPlan = StudyPlanMocks.EmptyStudyPlan();
+            var studyPlan = CurriculumMocks.EmptyCurriculum();
 
             Assert.Throws<ArgumentException>(() =>
             {
@@ -37,7 +37,7 @@ namespace Brevis.Core.Test.Model
         [Test]
         public void EstudianteSinMateriasAprobadas()
         {
-            var studyPlan = StudyPlanMocks.StudyPlanWithOneCorrelativitie();
+            var studyPlan = CurriculumMocks.CurriculumWithOneCorrelativitie();
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
@@ -51,7 +51,7 @@ namespace Brevis.Core.Test.Model
         [Test]
         public void EstudianteConTodasLasMateriasAprobadas()
         {
-            var studyPlan = StudyPlanMocks.StudyPlanWithOneCorrelativitie();
+            var studyPlan = CurriculumMocks.CurriculumWithOneCorrelativitie();
             var allSubjects = studyPlan.Correlativities.Select(t => t.Subject);
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
@@ -66,7 +66,7 @@ namespace Brevis.Core.Test.Model
         [Test]
         public void EstudianteConAlMenosUnaMateriaAprobada()
         {
-            var studyPlan = StudyPlanMocks.StudyPlanWithTwoCorrelativities();
+            var studyPlan = CurriculumMocks.CurriculumWithTwoCorrelativities();
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {

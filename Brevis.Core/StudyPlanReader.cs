@@ -6,13 +6,13 @@
     public class StudyPlanReader
     {
         public string FilePath;
-        public StudyPlan StudyPlanReaded { get; set; }
+        public Curriculum StudyPlanReaded { get; set; }
 
         public StudyPlanReader()
         {
             setFilePath();
             var jsonStringFromFile = File.ReadAllText(this.FilePath);
-            this.StudyPlanReaded = Newtonsoft.Json.JsonConvert.DeserializeObject<StudyPlan>(jsonStringFromFile);
+            this.StudyPlanReaded = Newtonsoft.Json.JsonConvert.DeserializeObject<Curriculum>(jsonStringFromFile);
         }
 
         private void setFilePath()

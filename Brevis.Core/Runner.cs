@@ -9,7 +9,7 @@
     {
         public void ruuun()
         {
-            var HardcodedStudyPlan = new StudyPlan(new List<Correlativities>()
+            var HardcodedStudyPlan = new Curriculum(new List<Correlativities>()
             {
                 new Correlativities {
                     Subject = new Subject { Name = "Introduccion: a la Programacion", Code= "00" },
@@ -26,7 +26,7 @@
             this.ruuun(HardcodedStudyPlan);
         }
 
-        public void ruuun(StudyPlan inputStudyPlan)
+        public void ruuun(Curriculum inputStudyPlan)
         {
             var defaultStudyPlan = new StudyPlanReader().StudyPlanReaded;
             inputStudyPlan.RemoveFrom(defaultStudyPlan);

@@ -25,7 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="StudyPlans\TecnicaturaSuperiorEnInformatica.json">
+    <None Update="Curriculums\Plan.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Curriculums\TecnicaturaSuperiorEnInformatica.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

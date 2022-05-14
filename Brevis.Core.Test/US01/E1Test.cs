@@ -5,7 +5,7 @@ namespace Brevis.Core.Test.Model
     using Brevis.Core.Test.Mocks;
     using NUnit.Framework;
     [TestFixture]
-    public class StudyPlanModelTest
+    public class E1Test
     {
         private Curriculum curriculum1;
         private Curriculum curriculum2;
@@ -24,7 +24,7 @@ namespace Brevis.Core.Test.Model
         }
 
         [Test]
-        public void TwoEmptyStudyPlans_DifferenceWith_ReturnEmptyStudyPlan()
+        public void TwoEmptycurriculums_DifferenceWith_ReturnEmptycurriculum()
         {
             //Act
             this.curriculum1.RemoveFrom(curriculum2);
@@ -34,7 +34,7 @@ namespace Brevis.Core.Test.Model
         }
 
         [Test]
-        public void OneEmptyStudyPlanAnotherWithOneSubject_RemoveFrom_ReturnEmptyStudyPlan()
+        public void OneEmptycurriculumAnotherWithOneSubject_RemoveFrom_ReturnEmptycurriculum()
         {
             //Arrange
             this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
@@ -47,7 +47,7 @@ namespace Brevis.Core.Test.Model
         }
 
         [Test]
-        public void TwoStudyPlansWithTheSameCorrelativities_DifferenceWith_ReturnEmptyStudyPlan()
+        public void TwocurriculumsWithTheSameCorrelativities_DifferenceWith_ReturnEmptycurriculum()
         {
             //Arrange
             this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
@@ -61,7 +61,7 @@ namespace Brevis.Core.Test.Model
         }
 
         [Test]
-        public void OneStudyPlanWithOneCorrelativitieAnotherWithTwo_DifferenceWith_ReturnStudyPlanWithOneCorrelativitie()
+        public void OnecurriculumWithOneCorrelativitieAnotherWithTwo_DifferenceWith_ReturncurriculumWithOneCorrelativitie()
         {
             //Arrange
             this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
@@ -75,7 +75,7 @@ namespace Brevis.Core.Test.Model
         }
 
         [Test]
-        public void OneStudyPlanWithOneCorrelativitieAnotherWithThree_DifferenceWith_ReturnStudyPlanWithTwoCorrelativities()
+        public void OnecurriculumWithOneCorrelativitieAnotherWithThree_DifferenceWith_ReturncurriculumWithTwoCorrelativities()
         {
             //Arrange
             this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();

@@ -3,17 +3,17 @@
     using System.Linq;
     using System.Collections.Generic;
 
-    public class StudyPlan
+    public class Curriculum
     {
         public string Code { get; set; }
         public ICollection<Correlativities> Correlativities;
 
-        public StudyPlan(ICollection<Correlativities> correlativities)
+        public Curriculum(ICollection<Correlativities> correlativities)
         {
             this.Correlativities = correlativities;
         }
 
-        public void RemoveFrom(StudyPlan anotherStudyPlan)
+        public void RemoveFrom(Curriculum anotherStudyPlan)
         {
             //Firts remove the aproved subjects from the studyPlan sended by paramns
             var correlativitiesDifference = anotherStudyPlan.Correlativities.Except(this.Correlativities, new CorrelativitiesComparer()).ToList();
