@@ -5,7 +5,7 @@ namespace Brevis.Core.Test.Model
     using Brevis.Core.Test.Mocks;
     using NUnit.Framework;
     [TestFixture]
-    public class E1Test
+    public class CA1Test
     {
         private Curriculum curriculum1;
         private Curriculum curriculum2;
