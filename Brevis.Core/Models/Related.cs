@@ -3,21 +3,21 @@
     using System;
     using System.Collections.Generic;
 
-    public class Correlativities
+    public class Related
     {
         public Subject Subject;
 
-        public ICollection<Subject> CorrelativeSubjects;
+        public ICollection<Subject> RelatedSubjects;
     }
 
-    public class CorrelativitiesComparer : IEqualityComparer<Correlativities>
+    public class RelatedComparer : IEqualityComparer<Related>
     {
-        public bool Equals(Correlativities x, Correlativities y)
+        public bool Equals(Related x, Related y)
         {
             return new SubjectComparer().Equals(x.Subject, y.Subject);
         }
 
-        public int GetHashCode(Correlativities obj)
+        public int GetHashCode(Related obj)
         {
             return obj.Subject.Code.GetHashCode();
         }

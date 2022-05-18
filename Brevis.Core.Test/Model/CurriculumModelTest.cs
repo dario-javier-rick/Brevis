@@ -45,14 +45,14 @@ namespace Brevis.Core.Test.Model
                 ApprovedSubjects = new List<Subject>()
             });
 
-            Assert.True(criticalPath.Count == studyPlan.Correlativities.Count);
+            Assert.True(criticalPath.Count == studyPlan.Related.Count);
         }
 
         [Test]
         public void EstudianteConTodasLasMateriasAprobadas()
         {
             var studyPlan = CurriculumMocks.CurriculumWithOneCorrelativitie();
-            var allSubjects = studyPlan.Correlativities.Select(t => t.Subject);
+            var allSubjects = studyPlan.Related.Select(t => t.Subject);
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {

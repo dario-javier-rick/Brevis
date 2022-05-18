@@ -1,27 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Brevis.Core.Model.Correlativities">
+  <Class Name="Brevis.Core.Models.Correlativities">
     <Position X="0.5" Y="0.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Correlativities.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Brevis.Core.Model.StudyPath">
+  <Class Name="Brevis.Core.Models.StudyPath">
     <Position X="2.5" Y="0.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAgAAAAAAAAAAAEAAAAAAgABAAAAAAAAAAAA=</HashCode>
       <FileName>Models\StudyPath.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Brevis.Core.Model.StudyPlan">
-    <Position X="0.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\StudyPlan.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Brevis.Core.Model.Subject">
+  <Class Name="Brevis.Core.Models.Subject">
     <Position X="2.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -29,9 +22,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Brevis.Core.StudyPlanReader">
-    <Position X="5.5" Y="2.75" Width="1.75" />
+    <Position X="4.5" Y="2.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>StudyPlanReader.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -42,11 +35,39 @@
       <FileName>Observer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="Brevis.Core.IReaderFiles">
-    <Position X="9.5" Y="1.75" Width="1.5" />
+  <Class Name="Brevis.Core.Models.Curriculum">
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAIAAAAgAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Curriculum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Brevis.Core.Models.ProgressCarreer">
+    <Position X="6.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ProgressCarreer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Brevis.Core.JsonFileReader">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoadJson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Brevis.Core.IReaderFiles">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IReaderFiles.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Brevis.Core.IProgressCarreerTransformer">
+    <Position X="4.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IProgressCarreerTransformer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

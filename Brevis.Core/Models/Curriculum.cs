@@ -6,21 +6,21 @@
     public class Curriculum
     {
         public string Code { get; set; }
-        public ICollection<Correlativities> Correlativities;
+        public ICollection<Related> Related;
 
-        public Curriculum(ICollection<Correlativities> correlativities)
+        public Curriculum(ICollection<Related> correlativities)
         {
-            this.Correlativities = correlativities;
+            this.Related = correlativities;
         }
 
         public void RemoveFrom(Curriculum anotherStudyPlan)
         {
             //Firts remove the aproved subjects from the studyPlan sended by paramns
-            var correlativitiesDifference = anotherStudyPlan.Correlativities.Except(this.Correlativities, new CorrelativitiesComparer()).ToList();
+            var relatedDifference = anotherStudyPlan.Related.Except(this.Related, new RelatedComparer()).ToList();
             // Then remove all the aproved subject from the references of the original study plan
-            correlativitiesDifference.ForEach(x => x.CorrelativeSubjects = x.CorrelativeSubjects.Except(this.Correlativities.Select(z => z.Subject), new SubjectComparer()).ToList());
+            relatedDifference.ForEach(x => x.RelatedSubjects = x.RelatedSubjects.Except(this.Related.Select(z => z.Subject), new SubjectComparer()).ToList());
             //Finally update the current collection of correlativities with the remaining result.
-            this.Correlativities = correlativitiesDifference;
+            this.Related = relatedDifference;
         }
     }
 }

@@ -9,27 +9,27 @@
     {
         public void ruuun()
         {
-            var HardcodedStudyPlan = new Curriculum(new List<Correlativities>()
+            var HardcodedRelated = new Curriculum(new List<Related>()
             {
-                new Correlativities {
+                new Related {
                     Subject = new Subject { Name = "Introduccion: a la Programacion", Code= "00" },
-                    CorrelativeSubjects = new List<Subject>()
+                    RelatedSubjects = new List<Subject>()
                 }
                 //,
-                // new Correlativities {
+                // new Related {
                 //    Subject = new Subject { Name = "Programacion I", Code= "01" },
-                //    CorrelativeSubjects = new List<Subject>() { new Subject { Name = "Introduccion: a la Programacion", Code= "00" } }
+                //    RelatedSubjects = new List<Subject>() { new Subject { Name = "Introduccion: a la Programacion", Code= "00" } }
                 //}
             }
             );
 
-            this.ruuun(HardcodedStudyPlan);
+            this.ruuun(HardcodedRelated);
         }
 
-        public void ruuun(Curriculum inputStudyPlan)
+        public void ruuun(Curriculum inputRelated)
         {
             var defaultStudyPlan = new StudyPlanReader().StudyPlanReaded;
-            inputStudyPlan.RemoveFrom(defaultStudyPlan);
+            inputRelated.RemoveFrom(defaultStudyPlan);
             //TopologicalSort.Sort(inputStCorrelativities, x => x.CorrelativeSubjects);
         }
     }
