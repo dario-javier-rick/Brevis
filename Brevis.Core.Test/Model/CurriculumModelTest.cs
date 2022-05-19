@@ -22,13 +22,13 @@ namespace Brevis.Core.Test.Model
         [Test]
         public void EmptyCollectionTest()
         {
-            var studyPlan = CurriculumMocks.EmptyCurriculum();
+            var related = CurriculumMocks.EmptyCurriculum();
 
             Assert.Throws<ArgumentException>(() =>
             {
                 model.GetCriticalStudyPath(new Models.ProgressCarreer
                 {
-                    StudyPlanCode = "",
+                    RelatedCode = "",
                     ApprovedSubjects = null
                 });
             });
@@ -37,26 +37,26 @@ namespace Brevis.Core.Test.Model
         [Test]
         public void EstudianteSinMateriasAprobadas()
         {
-            var studyPlan = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            var related = CurriculumMocks.CurriculumWithOneCorrelativitie();
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
-                StudyPlanCode = "",
+                RelatedCode = "",
                 ApprovedSubjects = new List<Subject>()
             });
 
-            Assert.True(criticalPath.Count == studyPlan.Related.Count);
+            Assert.True(criticalPath.Count == related.Related.Count);
         }
 
         [Test]
         public void EstudianteConTodasLasMateriasAprobadas()
         {
-            var studyPlan = CurriculumMocks.CurriculumWithOneCorrelativitie();
-            var allSubjects = studyPlan.Related.Select(t => t.Subject);
+            var related = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            var allSubjects = related.Related.Select(t => t.Subject);
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
-                StudyPlanCode = "",
+                RelatedCode = "",
                 ApprovedSubjects = allSubjects
             });
 
@@ -66,12 +66,12 @@ namespace Brevis.Core.Test.Model
         [Test]
         public void EstudianteConAlMenosUnaMateriaAprobada()
         {
-            var studyPlan = CurriculumMocks.CurriculumWithTwoCorrelativities();
+            var related = CurriculumMocks.CurriculumWithOneCorrelativitie();
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
-                StudyPlanCode = "",
-                ApprovedSubjects = new List<Subject> { CorrelativitiesMocks.IntroduccionALaProgramacion.Subject }
+                RelatedCode = "",
+                ApprovedSubjects = new List<Subject> { RelatedMocks.A.Subject }
             });
 
             Assert.True(criticalPath.Count == 1);

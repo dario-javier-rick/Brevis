@@ -22,7 +22,7 @@
             });
             ProgressCarreer progressCarreer = new ProgressCarreer
             {
-                StudyPlanCode = getStudyPlanCode(lines),
+                RelatedCode = getStudyPlanCode(lines),
                 ApprovedSubjects = subjects
             };
             return progressCarreer;

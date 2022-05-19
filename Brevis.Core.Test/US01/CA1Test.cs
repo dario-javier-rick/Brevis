@@ -59,34 +59,5 @@ namespace Brevis.Core.Test.Model
             //Assert 
             Assert.IsTrue(this.curriculum1.Related.Count == 0);
         }
-
-        [Test]
-        public void OnecurriculumWithOneCorrelativitieAnotherWithTwo_DifferenceWith_ReturncurriculumWithOneCorrelativitie()
-        {
-            //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
-            this.curriculum2 = CurriculumMocks.CurriculumWithTwoCorrelativities();
-
-            //Act
-            curriculum1.RemoveFrom(this.curriculum2);
-
-            //Assert 
-            Assert.IsTrue(this.curriculum1.Related.Count == 1);
-        }
-
-        [Test]
-        public void OnecurriculumWithOneCorrelativitieAnotherWithThree_DifferenceWith_ReturncurriculumWithTwoCorrelativities()
-        {
-            //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
-            this.curriculum2 = CurriculumMocks.CurriculumWithThreeCorrelativities();
-
-            //Act
-            this.curriculum1.RemoveFrom(this.curriculum2);
-
-            //Assert 
-            Assert.IsTrue(this.curriculum1.Related.Count == 2);
-        }
-
     }
 }

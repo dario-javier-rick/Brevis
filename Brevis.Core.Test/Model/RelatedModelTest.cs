@@ -5,7 +5,7 @@ namespace Brevis.Core.Test.Model
     using Brevis.Core.Test.Mocks;
     using NUnit.Framework;
     [TestFixture]
-    public class StudyPlanModelTest
+    public class RelatedModelTest
     {
         private Curriculum curriculum1;
         private Curriculum curriculum2;
@@ -65,7 +65,6 @@ namespace Brevis.Core.Test.Model
         {
             //Arrange
             this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
-            this.curriculum2 = CurriculumMocks.CurriculumWithTwoCorrelativities();
 
             //Act
             curriculum1.RemoveFrom(this.curriculum2);
@@ -79,7 +78,6 @@ namespace Brevis.Core.Test.Model
         {
             //Arrange
             this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
-            this.curriculum2 = CurriculumMocks.CurriculumWithThreeCorrelativities();
 
             //Act
             this.curriculum1.RemoveFrom(this.curriculum2);

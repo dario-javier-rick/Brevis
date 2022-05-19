@@ -5,33 +5,13 @@
     public static class CurriculumMocks
     {
         public static Curriculum EmptyCurriculum()
-        { return new Curriculum(new List<Correlativities>() { }); }
+        { return new Curriculum(new List<Related>() { }); }
 
         public static Curriculum CurriculumWithOneCorrelativitie()
         {
-            return new Curriculum(new List<Correlativities>()
+            return new Curriculum(new List<Related>()
             {
-                CorrelativitiesMocks.IntroduccionALaProgramacion
-            });
-        }
-
-        public static Curriculum CurriculumWithTwoCorrelativities()
-        {
-            return new Curriculum(new List<Correlativities>()
-            {
-                CorrelativitiesMocks.IntroduccionALaProgramacion,
-                CorrelativitiesMocks.ProgramacionI
-            });
-        }
-
-
-        public static Curriculum CurriculumWithThreeCorrelativities()
-        {
-            return new Curriculum(new List<Correlativities>()
-            {
-                CorrelativitiesMocks.IntroduccionALaProgramacion,
-                CorrelativitiesMocks.ProgramacionI,
-                CorrelativitiesMocks.ProgramacionII
+                RelatedMocks.C
             });
         }
     }
