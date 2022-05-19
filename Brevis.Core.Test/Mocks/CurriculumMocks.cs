@@ -7,7 +7,7 @@
         public static Curriculum EmptyCurriculum()
         { return new Curriculum(new List<Related>() { }); }
 
-        public static Curriculum CurriculumWithOneCorrelativitie()
+        public static Curriculum CurriculumWithOneRelated()
         {
             return new Curriculum(new List<Related>()
             {

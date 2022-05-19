@@ -37,7 +37,7 @@ namespace Brevis.Core.Test.Model
         [Test]
         public void EstudianteSinMateriasAprobadas()
         {
-            var related = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            var related = CurriculumMocks.CurriculumWithOneRelated();
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
@@ -51,7 +51,7 @@ namespace Brevis.Core.Test.Model
         [Test]
         public void EstudianteConTodasLasMateriasAprobadas()
         {
-            var related = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            var related = CurriculumMocks.CurriculumWithOneRelated();
             var allSubjects = related.Related.Select(t => t.Subject);
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
@@ -66,7 +66,7 @@ namespace Brevis.Core.Test.Model
         [Test]
         public void EstudianteConAlMenosUnaMateriaAprobada()
         {
-            var related = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            var related = CurriculumMocks.CurriculumWithOneRelated();
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
