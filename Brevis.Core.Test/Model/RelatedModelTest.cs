@@ -37,7 +37,7 @@ namespace Brevis.Core.Test.Model
         public void OneEmptyStudyPlanAnotherWithOneSubject_RemoveFrom_ReturnEmptyStudyPlan()
         {
             //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
 
             //Act
             this.curriculum1.RemoveFrom(this.curriculum2);
@@ -47,11 +47,11 @@ namespace Brevis.Core.Test.Model
         }
 
         [Test]
-        public void TwoStudyPlansWithTheSameCorrelativities_DifferenceWith_ReturnEmptyStudyPlan()
+        public void TwoStudyPlansWithTheSameRealted_DifferenceWith_ReturnEmptyStudyPlan()
         {
             //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
-            this.curriculum2 = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
+            this.curriculum2 = CurriculumMocks.CurriculumWithOneRelated();
 
             //Act
             this.curriculum1.RemoveFrom(this.curriculum2);
@@ -61,10 +61,10 @@ namespace Brevis.Core.Test.Model
         }
 
         [Test]
-        public void OneStudyPlanWithOneCorrelativitieAnotherWithTwo_DifferenceWith_ReturnStudyPlanWithOneCorrelativitie()
+        public void OneStudyPlanWithOneRelatedAnotherWithTwo_DifferenceWith_ReturnStudyPlanWithOneRelated()
         {
             //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
 
             //Act
             curriculum1.RemoveFrom(this.curriculum2);
@@ -74,10 +74,10 @@ namespace Brevis.Core.Test.Model
         }
 
         [Test]
-        public void OneStudyPlanWithOneCorrelativitieAnotherWithThree_DifferenceWith_ReturnStudyPlanWithTwoCorrelativities()
+        public void OneStudyPlanWithOneRelatedAnotherWithThree_DifferenceWith_ReturnStudyPlanWithTwoRelated()
         {
             //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
 
             //Act
             this.curriculum1.RemoveFrom(this.curriculum2);

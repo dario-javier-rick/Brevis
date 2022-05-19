@@ -1,12 +1,12 @@
 {
-  "Correlativities": [
+  "Related": [
     {
       "Subject": {
         "Code": "01",
         "Name": "A"
       },
 
-      "CorrelativeSubjects": []
+      "RelatedSubjects": []
 
     },
     {
@@ -14,19 +14,19 @@
         "Code": "02",
         "Name": "B"
       },
-      "CorrelativeSubjects": []
+      "RelatedSubjects": []
     },
     {
       "Subject": {
         "Code": "03",
         "Name": "C"
       },
-      "CorrelativeSubjects": [
+      "RelatedSubjects": [
         {
           "Code": "01",
           "Name": "A"
         }
-      ],
+      ]
     }
   ]
 }

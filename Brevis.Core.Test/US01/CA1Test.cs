@@ -37,7 +37,7 @@ namespace Brevis.Core.Test.Model
         public void OneEmptycurriculumAnotherWithOneSubject_RemoveFrom_ReturnEmptycurriculum()
         {
             //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
 
             //Act
             this.curriculum1.RemoveFrom(this.curriculum2);
@@ -47,11 +47,11 @@ namespace Brevis.Core.Test.Model
         }
 
         [Test]
-        public void TwocurriculumsWithTheSameCorrelativities_DifferenceWith_ReturnEmptycurriculum()
+        public void TwocurriculumsWithTheSameRelated_DifferenceWith_ReturnEmptycurriculum()
         {
             //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneCorrelativitie();
-            this.curriculum2 = CurriculumMocks.CurriculumWithOneCorrelativitie();
+            this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
+            this.curriculum2 = CurriculumMocks.CurriculumWithOneRelated();
 
             //Act
             this.curriculum1.RemoveFrom(this.curriculum2);

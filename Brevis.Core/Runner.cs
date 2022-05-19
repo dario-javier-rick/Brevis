@@ -12,7 +12,7 @@
             var HardcodedRelated = new Curriculum(new List<Related>()
             {
                 new Related {
-                    Subject = new Subject { Name = "Introduccion: a la Programacion", Code= "00" },
+                    Subject = new Subject { Name = "C", Code= "03" },
                     RelatedSubjects = new List<Subject>()
                 }
                 //,
@@ -30,7 +30,7 @@
         {
             var defaultStudyPlan = new StudyPlanReader().StudyPlanReaded;
             inputRelated.RemoveFrom(defaultStudyPlan);
-            //TopologicalSort.Sort(inputStCorrelativities, x => x.CorrelativeSubjects);
+            //TopologicalSort.Sort(inputStRelated, x => x.RelatedSubjects);
         }
     }
 

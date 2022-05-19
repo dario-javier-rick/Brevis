@@ -8,9 +8,9 @@
         public string Code { get; set; }
         public ICollection<Related> Related;
 
-        public Curriculum(ICollection<Related> correlativities)
+        public Curriculum(ICollection<Related> related)
         {
-            this.Related = correlativities;
+            this.Related = related;
         }
 
         public void RemoveFrom(Curriculum anotherStudyPlan)
@@ -19,7 +19,7 @@
             var relatedDifference = anotherStudyPlan.Related.Except(this.Related, new RelatedComparer()).ToList();
             // Then remove all the aproved subject from the references of the original study plan
             relatedDifference.ForEach(x => x.RelatedSubjects = x.RelatedSubjects.Except(this.Related.Select(z => z.Subject), new SubjectComparer()).ToList());
-            //Finally update the current collection of correlativities with the remaining result.
+            //Finally update the current collection of related with the remaining result.
             this.Related = relatedDifference;
         }
     }
