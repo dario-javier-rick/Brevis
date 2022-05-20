@@ -87,7 +87,7 @@ namespace Brevis.Web
             var rootPath = Directory.GetCurrentDirectory() + @"\..\ImporterImplementations";
             var files = Directory.GetFiles(rootPath);
 
-            foreach (var file in files)
+            foreach (var file in files.Where(t=> t.EndsWith(".dll"))) //Only get .dll assemblies
             {
                 Assembly assembly = Assembly.LoadFrom(file);
                 Type[] types = assembly.GetTypes();
@@ -104,13 +104,13 @@ namespace Brevis.Web
                             Brevis.Core.IProgressCarreerTransformer obj = (IProgressCarreerTransformer)Activator.CreateInstance(type);
 
                             _progressCarreerTransformerImplementations.Add(new Tuple<string, string>(t.Assembly.GetName().Name, type.Name));
-                            returnedCollection.Add(t.Assembly.GetName().Name + type.Name, obj);
+                            returnedCollection.Add(t.Assembly.GetName().Name + "." + type.Name, obj);
                         }
                     }
                 }
-
-                return returnedCollection;
             }
+
+            return returnedCollection;
 
             throw new ArgumentException("Implementation not found");
         }

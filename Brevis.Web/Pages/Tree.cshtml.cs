@@ -31,7 +31,7 @@ namespace Brevis.Web.Pages
                             }).ToArray();
             Encoding.GetEncoding(
 
-            _jsonSubjects = JsonConvert.SerializeObject(returnedSubjects);
+            _jsonSubjects = JsonConvert.SerializeObject(returnedSubjects));
         }
     }
 }

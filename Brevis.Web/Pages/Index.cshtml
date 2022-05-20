@@ -11,11 +11,16 @@
     <div>
         <form method="post" enctype="multipart/form-data">
             <input asp-for="File" type="file" />
-            <select 
-                asp-for="selectedProgressCarreer"
-                asp-items="@(new SelectList(Model._progressCarreerTransformerImplementations, "Item1", "Item2"))"
-            >
-                <option>Seleccione un lector</option>
+            <select asp-for="selectedProgressCarreer">
+                <optgroup label="Seleccione un lector">
+                    @{
+                        foreach (var item in Model._progressCarreerTransformerImplementations)
+                        {
+                            <text>
+                            <option>@item.Item1.@item.Item2</option></text>
+                        }
+                    }
+                </optgroup>
             </select>
             <input type="submit" />
         </form>
@@ -34,7 +39,7 @@
                 </tr>
                 @foreach (var item in Model._progressCarreerTransformerImplementations)
                 {
-                    <tr>
+                    <tr style="text-align:left">
                         <td>@item.Item1</td>
                         <td>@item.Item2</td>
                     </tr>
