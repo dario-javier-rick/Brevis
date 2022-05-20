@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Brevis.Core;
 using Brevis.Core.Models;
@@ -45,10 +46,14 @@ namespace Brevis.Web.Pages
             var progressCarrer = _progressCarreerTransformer.Transform(File);
 
             // to do : return something
-            var subjects = controller.GetCriticalStudyPath(progressCarrer);
+            //var subjects = controller.GetCriticalStudyPath(progressCarrer);
+            var subjects = new List<Subject> { new Subject { Code = "A" } };
+
             model.Notify();
 
-            return new JsonResult(subjects);
+            //return new JsonResult(subjects);
+
+            return RedirectToPage("Tree", new { subjects = subjects });
         }
     }
 }

@@ -43,7 +43,7 @@
             //}
             var Runner = new Runner();
             Runner.ruuun();
-            return null; //TODO: Temporary 
+            return new List<Subject>(); //TODO: Temporary 
         }
     }
 }

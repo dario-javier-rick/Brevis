@@ -70,7 +70,7 @@ namespace Brevis.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to StudyPlans.
+        ///   Looks up a localized string similar to Curriculums.
         /// </summary>
         internal static string StudyPlanFolder {
             get {

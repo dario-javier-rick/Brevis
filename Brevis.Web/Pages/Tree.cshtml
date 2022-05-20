@@ -1,0 +1,33 @@
+﻿@page
+@model Brevis.Web.Pages.TreeModel
+@{
+}
+<script type="text/javascript" src="~/vis-network/dist/vis-network.min.js">
+</script>
+<link href="~/vis-network/dist/dist/vis-network.min.css" rel="stylesheet" />
+<div id="tree"></div>
+<script>
+
+    @{
+        foreach (var subject in Model._subjects)
+        {
+
+        }
+    }
+
+    var nodes = new vis.DataSet([
+        { id:1, label: "A" },
+        { id:2, label: "B" },
+        { id:3, label: "C" },
+    ]);
+    var studyPath = new vis.DataSet([
+        { from: 1, to: 3 }
+    ]);
+    var container = document.getElementById("tree");
+    var data = {
+        nodes: nodes,
+        edges : studyPath,
+    };
+    var options = {};
+    var network = new vis.Network(container, data, options);
+</script>
