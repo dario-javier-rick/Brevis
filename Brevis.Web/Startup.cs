@@ -12,11 +12,14 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using static Brevis.Web.ServiceResolver;
 
 namespace Brevis.Web
 {
     public class Startup
     {
+        public static List<Tuple<string, string>> _progressCarreerTransformerImplementations = new List<Tuple<string, string>>();
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -37,8 +40,22 @@ namespace Brevis.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //Inyeccion de dependencias que configura el IProgressCarreerTransformer correspondiente.
-            services.Add(new ServiceDescriptor(typeof(IProgressCarreerTransformer), GetProgressCarreerTransformer()));
+            //Inyeccion de dependencias que configura los IProgressCarreerTransformer correspondientes.
+            //https://stackoverflow.com/questions/39174989/how-to-register-multiple-implementations-of-the-same-interface-in-asp-net-core
+
+            var progressCarreerTransformerImplementations = GetProgressCarreerTransformers();
+
+            services.AddTransient<ProgressCarreerTransformerResolver>(serviceProvider => key =>
+            {
+                var intent = progressCarreerTransformerImplementations.TryGetValue(key, out var value);
+
+                if (!intent)
+                {
+                    throw new Exception($"There was an error trying to resolve an IProgressCarreerTransformer. Key: {key}");
+                }
+
+                return value;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,8 +80,10 @@ namespace Brevis.Web
         }
 
 
-        private IProgressCarreerTransformer GetProgressCarreerTransformer()
+        private Dictionary<string, IProgressCarreerTransformer> GetProgressCarreerTransformers()
         {
+            Dictionary<string, IProgressCarreerTransformer> returnedCollection = new Dictionary<string, IProgressCarreerTransformer>();
+
             var rootPath = Directory.GetCurrentDirectory() + @"\..\ImporterImplementations";
             var files = Directory.GetFiles(rootPath);
 
@@ -84,12 +103,13 @@ namespace Brevis.Web
                         {
                             Brevis.Core.IProgressCarreerTransformer obj = (IProgressCarreerTransformer)Activator.CreateInstance(type);
 
-                            //Por ahora, devuelve la primer implementacion que encuentra. Esto cumple con el criterio de extensibilidad de la US1
-                            //para la iteracion 2, podria buscar una implementacion segun algun criterio definido por el usuario.
-                            return obj;
+                            _progressCarreerTransformerImplementations.Add(new Tuple<string, string>(t.Assembly.GetName().Name, type.Name));
+                            returnedCollection.Add(t.Assembly.GetName().Name + type.Name, obj);
                         }
                     }
                 }
+
+                return returnedCollection;
             }
 
             throw new ArgumentException("Implementation not found");
