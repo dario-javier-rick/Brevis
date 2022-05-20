@@ -1,11 +1,12 @@
-﻿
-namespace Brevis.Core.Test.Model
+﻿using Brevis.Core.Models;
+using Brevis.Core.Test.Mocks;
+using NUnit.Framework;
+
+
+namespace Brevis.Core.Test.UserStories
 {
-    using Brevis.Core.Models;
-    using Brevis.Core.Test.Mocks;
-    using NUnit.Framework;
     [TestFixture]
-    public class CA1Test
+    public class US01Test
     {
         private Curriculum curriculum1;
         private Curriculum curriculum2;
