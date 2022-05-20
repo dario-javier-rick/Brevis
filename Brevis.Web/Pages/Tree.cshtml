@@ -8,18 +8,8 @@
 <div id="tree"></div>
 <script>
 
-    @{
-        foreach (var subject in Model._subjects)
-        {
-
-        }
-    }
-
-    var nodes = new vis.DataSet([
-        { id:1, label: "A" },
-        { id:2, label: "B" },
-        { id:3, label: "C" },
-    ]);
+    var x = @Model._jsonSubjects);
+    var nodes = new vis.DataSet(x);
     var studyPath = new vis.DataSet([
         { from: 1, to: 3 }
     ]);
