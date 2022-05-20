@@ -26,12 +26,25 @@ namespace Brevis.Core.Test.UserStories
         public void CA01Test()
         {
             //TODO...
+        }
 
-            //Act
-            //this.curriculum1.RemoveFrom(curriculum2);
+        /// <summary>
+        /// CA2. El discovery de la aplicación no es capaz de descubrir ninguna implementación.
+        /// </summary>
+        [Test]
+        public void CA02Test()
+        {
+            //TODO...
+        }
 
-            //Assert 
-            //Assert.IsTrue(this.curriculum1.Related.Count == 0);
+        /// <summary>
+        /// CA3 La aplicación permitirá agregar distintas implementaciones de lectores de archivos para diferentes formatos.
+        // La aplicación debe decidir que implementación corresponde usar de forma automática.
+        /// </summary>
+        [Test]
+        public void CA03Test()
+        {
+            //TODO...
         }
     }
 }

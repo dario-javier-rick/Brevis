@@ -20,11 +20,4 @@
     <ProjectReference Include="..\Brevis.Core\Brevis.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="US05\" />
-    <Folder Include="US04\" />
-    <Folder Include="US03\" />
-    <Folder Include="US02\" />
-  </ItemGroup>
-
 </Project>
