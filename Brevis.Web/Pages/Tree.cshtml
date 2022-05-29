@@ -7,8 +7,8 @@
 <link href="~/vis-network/dist/dist/vis-network.min.css" rel="stylesheet" />
 <div id="tree"></div>
 <script>
-
-    var x = @Model._jsonSubjects);
+    //var x = @Model._jsonSubjects);
+    var x = JSON.parse(@Html.Raw(Json.Serialize(@Model._jsonSubjects)));
     var nodes = new vis.DataSet(x);
     var studyPath = new vis.DataSet([
         { from: 1, to: 3 }
