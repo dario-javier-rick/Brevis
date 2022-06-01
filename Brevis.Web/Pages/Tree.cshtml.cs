@@ -26,8 +26,8 @@ namespace Brevis.Web.Pages
             
             var returnedSubjects = _subjects.Select(t =>
                             new {
-                                Id = Int16.Parse(t.Code),
-                                Label = t.Name
+                                id = Int16.Parse(t.Code),
+                                label = t.Name
                             }).ToArray();
             _jsonSubjects = JsonConvert.SerializeObject(returnedSubjects);
         }
