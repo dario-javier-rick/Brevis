@@ -2,7 +2,7 @@
 using Brevis.Core.Test.Mocks;
 using NUnit.Framework;
 
-namespace Brevis.Core.Test.Model
+namespace Brevis.Core.Tests.Model
 {
     [TestFixture]
     public class RelatedModelTest

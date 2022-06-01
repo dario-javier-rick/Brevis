@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Brevis.Core.Test.Model
+namespace Brevis.Core.Tests.Model
 {
     [TestFixture]
     public class CurriculumModelTest
