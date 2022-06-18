@@ -49,15 +49,26 @@ namespace Brevis.Web.Pages
             //model.AttachObserver(view);
 
             _progressCarreerTransformer = _progressCarreerTransformerResolver(selectedProgressCarreer); //Pass XLS, CSV, etc.
-            var progressCarrer = _progressCarreerTransformer.Transform(File);
 
-            // to do : return something
-            //var subjects = controller.GetCriticalStudyPath(progressCarrer);
-            var subjects = new List<Subject> { new Subject { Code = "A" } };
+            ProgressCarreer progressCarrer;
+
+
+            if (File.Length == 0)
+            {
+                throw new ArgumentException("File is empty");
+            }
+
+            using (var ms = new MemoryStream())
+            {
+                File.CopyTo(ms);
+                ms.Seek(0, SeekOrigin.Begin);
+
+                progressCarrer = _progressCarreerTransformer.Transform(ms);
+            }
+
+            var subjects = controller.GetCriticalStudyPath(progressCarrer);
 
             model.Notify();
-
-            //return new JsonResult(subjects);
 
             return RedirectToPage("Tree", new { subjects = subjects });
         }

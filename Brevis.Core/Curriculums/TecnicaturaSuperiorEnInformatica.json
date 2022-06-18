@@ -1,11 +1,12 @@
 {
-  "Related": [
+  "Code": "Tecnicatura Superior en Informatica",
+  "Subjects": [
     {
       "Subject": {
         "Code": "00",
         "Name": "Introduccion: a la Programacion"
       },
-      "CorrelativeSubjects": []
+      "RelatedSubjects": []
     },
     {
       "Subject": {

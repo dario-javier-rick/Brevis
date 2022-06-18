@@ -1,10 +1,10 @@
 ﻿using Brevis.Core.Models;
-using System;
+using System.IO;
 
 namespace Brevis.Core
 {
     public interface IProgressCarreerTransformer
     {
-        ProgressCarreer Transform(Object input);
+        ProgressCarreer Transform(Stream input);
     }
 }

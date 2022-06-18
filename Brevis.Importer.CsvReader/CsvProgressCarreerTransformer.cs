@@ -1,12 +1,13 @@
-﻿namespace Brevis.Importer.CsvReader
+﻿using Brevis.Core.Models;
+using System.IO;
+
+namespace Brevis.Importer.CsvReader
 {
-    using Brevis.Core.Models;
     public class CsvProgressCarreerTransformer : Core.IProgressCarreerTransformer
     {
-        public ProgressCarreer Transform(object input)
+        public ProgressCarreer Transform(Stream input)
         {
-            string file = @"../Brevis.Files/approved_subjects.csv";
-            var progressCarreer = new CsvImporter().Import<ProgressCarreer>(file);
+            var progressCarreer = new CsvImporter().Import<ProgressCarreer>(input);
             return progressCarreer;
         }
     }

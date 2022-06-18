@@ -1,15 +1,12 @@
 ﻿using Brevis.Core.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace Brevis.Importer.XlsReader
 {
     public class XlsProgressCarreerTransformer : Core.IProgressCarreerTransformer
     {
-        public ProgressCarreer Transform(object input)
+        public ProgressCarreer Transform(Stream input)
         {
             throw new NotImplementedException();
         }

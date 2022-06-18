@@ -37,13 +37,13 @@
         /// <returns></returns>
         public ICollection<Subject> GetCriticalStudyPath(ProgressCarreer progressCarreer)
         {
-            //if (json == "{}")
-            //{
-            //    throw new ArgumentException();
-            //}
-            var Runner = new Runner();
-            Runner.ruuun();
-            return new List<Subject>(); //TODO: Temporary 
+            if (progressCarreer == null)
+            {
+                throw new ArgumentException();
+            }
+
+            var businessProcess = new CriticalPathBusinessProcess();
+            return businessProcess.GetCriticalPath(progressCarreer);
         }
     }
 }

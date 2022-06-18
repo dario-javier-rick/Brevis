@@ -4,7 +4,6 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Brevis.Core.Tests.Model
 {
@@ -28,7 +27,6 @@ namespace Brevis.Core.Tests.Model
             {
                 model.GetCriticalStudyPath(new Models.ProgressCarreer
                 {
-                    RelatedCode = "",
                     ApprovedSubjects = null
                 });
             });
@@ -41,22 +39,20 @@ namespace Brevis.Core.Tests.Model
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
-                RelatedCode = "",
                 ApprovedSubjects = new List<Subject>()
             });
 
-            Assert.True(criticalPath.Count == related.Related.Count);
+            Assert.True(criticalPath.Count == related.Subjects.Count);
         }
 
         [Test]
         public void EstudianteConTodasLasMateriasAprobadas()
         {
             var related = CurriculumMocks.CurriculumWithOneRelated();
-            var allSubjects = related.Related.Select(t => t.Subject);
+            var allSubjects = related.Subjects.Select(t => t.Subject);
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
-                RelatedCode = "",
                 ApprovedSubjects = allSubjects
             });
 
@@ -70,7 +66,6 @@ namespace Brevis.Core.Tests.Model
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
-                RelatedCode = "",
                 ApprovedSubjects = new List<Subject> { RelatedMocks.A.Subject }
             });
 

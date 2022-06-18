@@ -31,7 +31,7 @@ namespace Brevis.Core.Test.UserStories
             this.curriculum1.RemoveFrom(curriculum2);
 
             //Assert 
-            Assert.IsTrue(this.curriculum1.Related.Count == 0);
+            Assert.IsTrue(this.curriculum1.Subjects.Count == 0);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace Brevis.Core.Test.UserStories
             this.curriculum1.RemoveFrom(this.curriculum2);
 
             //Assert 
-            Assert.IsTrue(this.curriculum1.Related.Count == 0);
+            Assert.IsTrue(this.curriculum1.Subjects.Count == 0);
         }
 
         [Test]
@@ -58,7 +58,7 @@ namespace Brevis.Core.Test.UserStories
             this.curriculum1.RemoveFrom(this.curriculum2);
 
             //Assert 
-            Assert.IsTrue(this.curriculum1.Related.Count == 0);
+            Assert.IsTrue(this.curriculum1.Subjects.Count == 0);
         }
     }
 }

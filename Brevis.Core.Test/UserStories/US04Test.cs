@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Brevis.Core.Models;
-using Brevis.Core.Test.Mocks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Brevis.Core.Test.UserStories
 {
