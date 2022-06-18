@@ -11,7 +11,6 @@ namespace Brevis.Web.Pages
     {
         public string _jsonSubjects;
 
-
         public void OnGet(IEnumerable<Subject> subjects)
         {
             var returnedSubjects = subjects.Select(t =>
