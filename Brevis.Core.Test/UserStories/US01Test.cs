@@ -2,50 +2,34 @@
 using Brevis.Core.Test.Mocks;
 using NUnit.Framework;
 
-
 namespace Brevis.Core.Test.UserStories
 {
     [TestFixture]
     public class US01Test
     {
-        private Curriculum curriculum1;
-        private Curriculum curriculum2;
-
+        StudyPath model;
         [SetUp]
         public void Setup()
         {
-            this.curriculum1 = CurriculumMocks.EmptyCurriculum();
-            this.curriculum2 = CurriculumMocks.EmptyCurriculum();
+            model = new StudyPath();
         }
         [TearDown]
         public void TearDown()
         {
-            this.curriculum1 = null;
-            this.curriculum2 = null;
+            this.model = null;
+
         }
 
         [Test]
-        public void TwoEmptycurriculums_DifferenceWith_ReturnEmptycurriculum()
+        public void CA1() 
         {
-            //Act
-            this.curriculum1.RemoveFrom(Curriculum.CastToProgressCarreer(curriculum2));
 
-            //Assert 
-            Assert.IsTrue(this.curriculum1.Subjects.Count == 0);
-        }
-
-        [Test]
-        public void TwocurriculumsWithTheSameRelated_DifferenceWith_ReturnEmptycurriculum()
-        {
             //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
-            this.curriculum2 = CurriculumMocks.CurriculumWithOneRelated();
-
+            List criticalPath = (List)this.model.GetCriticalStudyPath(new ProgressCarreer());
             //Act
-            this.curriculum1.RemoveFrom(Curriculum.CastToProgressCarreer(this.curriculum2));
 
             //Assert 
-            Assert.IsTrue(this.curriculum1.Subjects.Count == 0);
+            Assert.IsTrue( criticalPath.Count() == 0);
         }
     }
 }
