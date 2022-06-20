@@ -21,15 +21,15 @@ namespace Brevis.Core.Test.UserStories
         }
 
         [Test]
-        public void CA1() 
+        public void CA1()
         {
-
             //Arrange
-            List criticalPath = (List)this.model.GetCriticalStudyPath(new ProgressCarreer());
+            var criticalPath = this.model.GetCriticalStudyPath(new ProgressCarreer());
+            
             //Act
 
             //Assert 
-            Assert.IsTrue( criticalPath.Count() == 0);
+            Assert.IsTrue(criticalPath.Count == 0);
         }
     }
 }
