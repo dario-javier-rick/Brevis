@@ -27,24 +27,12 @@ namespace Brevis.Core.Tests.Model
         public void TwoEmptyStudyPlans_DifferenceWith_ReturnEmptyStudyPlan()
         {
             //Act
-            this.curriculum1.RemoveFrom(curriculum2);
+            this.curriculum1.RemoveFrom(Curriculum.CastToProgressCarreer(curriculum2));
 
             //Assert 
             Assert.IsTrue(this.curriculum1.Subjects.Count == 0);
         }
 
-        [Test]
-        public void OneEmptyStudyPlanAnotherWithOneSubject_RemoveFrom_ReturnEmptyStudyPlan()
-        {
-            //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
-
-            //Act
-            this.curriculum1.RemoveFrom(this.curriculum2);
-
-            //Assert 
-            Assert.IsTrue(this.curriculum1.Subjects.Count == 0);
-        }
 
         [Test]
         public void TwoStudyPlansWithTheSameRealted_DifferenceWith_ReturnEmptyStudyPlan()
@@ -54,7 +42,7 @@ namespace Brevis.Core.Tests.Model
             this.curriculum2 = CurriculumMocks.CurriculumWithOneRelated();
 
             //Act
-            this.curriculum1.RemoveFrom(this.curriculum2);
+            this.curriculum1.RemoveFrom(Curriculum.CastToProgressCarreer(this.curriculum2));
 
             //Assert 
             Assert.IsTrue(this.curriculum1.Subjects.Count == 0);
@@ -67,23 +55,10 @@ namespace Brevis.Core.Tests.Model
             this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
 
             //Act
-            curriculum1.RemoveFrom(this.curriculum2);
+            curriculum1.RemoveFrom(Curriculum.CastToProgressCarreer(this.curriculum2));
 
             //Assert 
             Assert.IsTrue(this.curriculum1.Subjects.Count == 1);
-        }
-
-        [Test]
-        public void OneStudyPlanWithOneRelatedAnotherWithThree_DifferenceWith_ReturnStudyPlanWithTwoRelated()
-        {
-            //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
-
-            //Act
-            this.curriculum1.RemoveFrom(this.curriculum2);
-
-            //Assert 
-            Assert.IsTrue(this.curriculum1.Subjects.Count == 2);
         }
 
     }

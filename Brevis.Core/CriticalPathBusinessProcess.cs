@@ -19,10 +19,10 @@
 
         private ICollection<Subject> GetCriticalPath(Curriculum inputRelated, ProgressCarreer progressCarreer)
         {
-            var result = Curriculum.RemoveFrom(progressCarreer, inputRelated);
+            inputRelated.RemoveFrom(progressCarreer);
             //TopologicalSort.Sort(inputStRelated, x => x.RelatedSubjects);
 
-            return result.Subjects.Select(t => t.Subject).ToList();
+            return inputRelated.Subjects.Select(t => t.Subject).ToList();
         }
     }
       

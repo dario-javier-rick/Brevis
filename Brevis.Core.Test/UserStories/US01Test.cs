@@ -28,20 +28,7 @@ namespace Brevis.Core.Test.UserStories
         public void TwoEmptycurriculums_DifferenceWith_ReturnEmptycurriculum()
         {
             //Act
-            this.curriculum1.RemoveFrom(curriculum2);
-
-            //Assert 
-            Assert.IsTrue(this.curriculum1.Subjects.Count == 0);
-        }
-
-        [Test]
-        public void OneEmptycurriculumAnotherWithOneSubject_RemoveFrom_ReturnEmptycurriculum()
-        {
-            //Arrange
-            this.curriculum1 = CurriculumMocks.CurriculumWithOneRelated();
-
-            //Act
-            this.curriculum1.RemoveFrom(this.curriculum2);
+            this.curriculum1.RemoveFrom(Curriculum.CastToProgressCarreer(curriculum2));
 
             //Assert 
             Assert.IsTrue(this.curriculum1.Subjects.Count == 0);
@@ -55,7 +42,7 @@ namespace Brevis.Core.Test.UserStories
             this.curriculum2 = CurriculumMocks.CurriculumWithOneRelated();
 
             //Act
-            this.curriculum1.RemoveFrom(this.curriculum2);
+            this.curriculum1.RemoveFrom(Curriculum.CastToProgressCarreer(this.curriculum2));
 
             //Assert 
             Assert.IsTrue(this.curriculum1.Subjects.Count == 0);

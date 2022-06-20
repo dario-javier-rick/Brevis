@@ -19,16 +19,13 @@ namespace Brevis.Core.Tests.Model
         }
 
         [Test]
-        public void EmptyCollectionTest()
+        public void NullArgumentTest()
         {
             var related = CurriculumMocks.EmptyCurriculum();
 
             Assert.Throws<ArgumentException>(() =>
             {
-                model.GetCriticalStudyPath(new Models.ProgressCarreer
-                {
-                    ApprovedSubjects = null
-                });
+                model.GetCriticalStudyPath(null);
             });
         }
 
@@ -53,7 +50,7 @@ namespace Brevis.Core.Tests.Model
 
             var criticalPath = model.GetCriticalStudyPath(new Models.ProgressCarreer
             {
-                ApprovedSubjects = allSubjects
+                ApprovedSubjects = allSubjects.ToList()
             });
 
             Assert.True(criticalPath.Count == 0);
