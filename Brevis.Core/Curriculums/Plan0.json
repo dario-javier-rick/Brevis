@@ -1,5 +1,5 @@
 {
-  "Code": "Plan",
+  "Code": "Plan0",
   "Subjects": [
     {
       "Subject": {
@@ -24,18 +24,6 @@
         {
           "Code": "01",
           "Name": "A"
-        }
-      ]
-    },
-    {
-      "Subject": {
-        "Code": "04",
-        "Name": "D"
-      },
-      "RelatedSubjects": [
-        {
-          "Code": "03",
-          "Name": "C"
         }
       ]
     }

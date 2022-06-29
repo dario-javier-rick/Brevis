@@ -10,7 +10,8 @@
     {
         public ICollection<Subject> GetCriticalPath(ProgressCarreer progressCarreer)
         {
-            //Paso 1. Obtener el plan de estudios correspondiente.
+            //Paso 1. Obtener el plan de estudios correspondiente
+            //en base al progressCarreer.CurriculumCode
             var defaultStudyPlan = new StudyPlanReader().StudyPlanReaded;
 
             //Paso 2. En base al plan de estudio y las materias aprobadas, calcular camino
@@ -20,8 +21,7 @@
         private ICollection<Subject> GetCriticalPath(Curriculum inputRelated, ProgressCarreer progressCarreer)
         {
             inputRelated.RemoveFrom(progressCarreer);
-            //TopologicalSort.Sort(inputStRelated, x => x.RelatedSubjects);
-
+            
             return inputRelated.Subjects.Select(t => t.Subject).ToList();
         }
     }

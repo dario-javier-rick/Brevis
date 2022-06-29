@@ -20,7 +20,8 @@
             this.FilePath = Path.Combine(
                 Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location),
                 Resources.StudyPlanFolder,
-                Resources.DefaultJson);
+                "Plan0.json" //TODO: Fix this ASAP
+                );
         }
     }
 }

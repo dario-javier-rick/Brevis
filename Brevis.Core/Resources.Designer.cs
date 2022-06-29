@@ -61,15 +61,6 @@ namespace Brevis.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plan.json.
-        /// </summary>
-        internal static string DefaultJson {
-            get {
-                return ResourceManager.GetString("DefaultJson", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Curriculums.
         /// </summary>
         internal static string StudyPlanFolder {
