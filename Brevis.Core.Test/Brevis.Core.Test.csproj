@@ -20,4 +20,25 @@
     <ProjectReference Include="..\Brevis.Core\Brevis.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UserStories\Files\US02\CA01\" />
+    <Folder Include="UserStories\Files\US02\CA03\" />
+    <Folder Include="UserStories\Files\US02\CA02\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="UserStories\Files\US02\CA01\Brevis.Importer.CsvReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US02\CA02\donotremove.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US02\CA03\Brevis.Importer.CsvReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US02\CA03\Brevis.Importer.XlsReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

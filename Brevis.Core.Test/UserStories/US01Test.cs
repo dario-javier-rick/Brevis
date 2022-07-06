@@ -8,7 +8,7 @@ namespace Brevis.Core.Test.UserStories
     [TestFixture]
     public class US01Test
     {
-        StudyPath model;
+        private StudyPath model;
 
         [SetUp]
         public void Setup()

@@ -15,7 +15,7 @@ namespace Brevis.Web.Pages
 {
     public class IndexModel : PageModel
     {
-        public List<Tuple<string, string>> _progressCarreerTransformerImplementations = new List<Tuple<string, string>>();
+        public Dictionary<string, string> _progressCarreerTransformerImplementations = new Dictionary<string, string>();
         public string selectedProgressCarreer;
 
         public IProgressCarreerTransformer _progressCarreerTransformer;
@@ -28,7 +28,24 @@ namespace Brevis.Web.Pages
 
         public void OnGet()
         {
-            _progressCarreerTransformerImplementations = Startup._progressCarreerTransformerImplementations;
+            //TODO: Find a proper way to make this. The fact is that the ProgressCarreerTransformerResolver knows how to
+            //resolve them, but it can't list them all
+            var implementations = new Dictionary<string, string>();
+            implementations.Add("CSV", "Brevis.Importer.CsvReader.CsvProgressCarreerTransformer");
+            implementations.Add("XLS", "Brevis.Importer.XlsReader.XlsProgressCarreerTransformer");
+
+            foreach (var implementation in implementations)
+            {
+                try
+                {
+                    var progressCarreerTransformer = _progressCarreerTransformerResolver(implementation.Value);
+                    _progressCarreerTransformerImplementations.Add(implementation.Key, implementation.Value);
+                }
+                catch (ArgumentException ex)
+                {
+                    //The implementation isn't registered
+                }
+            }
         }
 
 

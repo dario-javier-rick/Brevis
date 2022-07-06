@@ -16,11 +16,12 @@ namespace Brevis.Web
 {
     public class Startup
     {
-        public static List<Tuple<string, string>> _progressCarreerTransformerImplementations = new List<Tuple<string, string>>();
+        private readonly Discover _discover;
 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            _discover = new Discover();
         }
 
         public IConfiguration Configuration { get; }
@@ -41,7 +42,8 @@ namespace Brevis.Web
             //Inyeccion de dependencias que configura los IProgressCarreerTransformer correspondientes.
             //https://stackoverflow.com/questions/39174989/how-to-register-multiple-implementations-of-the-same-interface-in-asp-net-core
 
-            var progressCarreerTransformerImplementations = GetProgressCarreerTransformers();
+            var rootPath = Directory.GetCurrentDirectory() + @"\..\ImporterImplementations";
+            var progressCarreerTransformerImplementations = _discover.GetProgressCarreerTransformers(rootPath);
 
             services.AddTransient<ProgressCarreerTransformerResolver>(serviceProvider => key =>
             {
@@ -49,7 +51,7 @@ namespace Brevis.Web
 
                 if (!intent)
                 {
-                    throw new Exception($"There was an error trying to resolve an IProgressCarreerTransformer. Key: {key}");
+                    throw new ArgumentException($"There was an error trying to resolve an IProgressCarreerTransformer. Key: {key}");
                 }
 
                 return value;
@@ -75,42 +77,6 @@ namespace Brevis.Web
             app.UseCookiePolicy();
 
             app.UseMvc();
-        }
-
-
-        private Dictionary<string, IProgressCarreerTransformer> GetProgressCarreerTransformers()
-        {
-            Dictionary<string, IProgressCarreerTransformer> returnedCollection = new Dictionary<string, IProgressCarreerTransformer>();
-
-            var rootPath = Directory.GetCurrentDirectory() + @"\..\ImporterImplementations";
-            var files = Directory.GetFiles(rootPath);
-
-            foreach (var file in files.Where(t=> t.EndsWith(".dll"))) //Only get .dll assemblies
-            {
-                Assembly assembly = Assembly.LoadFrom(file);
-                Type[] types = assembly.GetTypes();
-
-                foreach (Type t in types)
-                {
-                    if (t.IsClass)
-                    {
-                        string typeName = t.AssemblyQualifiedName;
-                        Type type = Type.GetType(typeName);
-
-                        if (type.GetInterfaces().Contains(typeof(Brevis.Core.IProgressCarreerTransformer)))
-                        {
-                            Brevis.Core.IProgressCarreerTransformer obj = (IProgressCarreerTransformer)Activator.CreateInstance(type);
-
-                            _progressCarreerTransformerImplementations.Add(new Tuple<string, string>(t.Assembly.GetName().Name, type.Name));
-                            returnedCollection.Add(t.Assembly.GetName().Name + "." + type.Name, obj);
-                        }
-                    }
-                }
-            }
-
-            return returnedCollection;
-
-            throw new ArgumentException("Implementation not found");
         }
     }
 }
