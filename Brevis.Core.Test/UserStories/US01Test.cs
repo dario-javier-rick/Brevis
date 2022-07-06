@@ -35,14 +35,8 @@ namespace Brevis.Core.Test.UserStories
 
             //Assert
             var expectedList = new List<Subject>() { SubjectMocks.A, SubjectMocks.B };
-//            Assert.AreEqual(expectedList.Count, criticalPath.Count);
 
-            foreach (var subject in criticalPath)
-            {
-                Assert.IsTrue(expectedList.Contains(subject));
-            }
-
-
+            CollectionAssert.AreEqual(expectedList, criticalPath);
         }
         [Test]
         public void CA2()
@@ -75,7 +69,7 @@ namespace Brevis.Core.Test.UserStories
             foreach (var subject in criticalPath)
             {
                 Assert.IsTrue(expectedList.Contains(subject));
-            }  
+            }
 
         }
         [Test]
