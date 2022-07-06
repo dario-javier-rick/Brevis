@@ -2,7 +2,6 @@
 using Brevis.Core.Test.Mocks;
 using NUnit.Framework;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Brevis.Core.Test.UserStories
 {
@@ -10,16 +9,17 @@ namespace Brevis.Core.Test.UserStories
     public class US01Test
     {
         StudyPath model;
+
         [SetUp]
         public void Setup()
         {
             model = new StudyPath();
         }
+
         [TearDown]
         public void TearDown()
         {
             this.model = null;
-
         }
 
         [Test]
@@ -35,7 +35,6 @@ namespace Brevis.Core.Test.UserStories
 
             //Assert
             var expectedList = new List<Subject>() { SubjectMocks.A, SubjectMocks.B };
-
             CollectionAssert.AreEqual(expectedList, criticalPath);
         }
         [Test]
@@ -43,52 +42,51 @@ namespace Brevis.Core.Test.UserStories
         {
             //Arrange
             ProgressCarreer progressCarreer = new ProgressCarreer();
-            progressCarreer.ApprovedSubjects = new List<Subject>();
             progressCarreer.CurriculumCode = "Plan0";
+            progressCarreer.ApprovedSubjects = new List<Subject>();
             progressCarreer.ApprovedSubjects.Add(SubjectMocks.A);
             progressCarreer.ApprovedSubjects.Add(SubjectMocks.B);
             progressCarreer.ApprovedSubjects.Add(SubjectMocks.C);
+
             //Act
             var criticalPath = this.model.GetCriticalStudyPath(progressCarreer);
+
             //Assert 
-            Assert.AreEqual(0, criticalPath.Count);
+            var expectedList = new List<Subject>() { };
+            CollectionAssert.AreEqual(expectedList, criticalPath);
         }
         [Test]
         public void CA3()
         {
             //Arrange
             ProgressCarreer progressCarreer = new ProgressCarreer();
-            progressCarreer.ApprovedSubjects = new List<Subject>();
-            progressCarreer.ApprovedSubjects.Add(SubjectMocks.B);
             progressCarreer.CurriculumCode = "Plan0";
+            progressCarreer.ApprovedSubjects = new List<Subject>();
+            progressCarreer.ApprovedSubjects.Add(SubjectMocks.A);
+
             //Act
-            var criticalPath = this.model.GetCriticalStudyPath(new ProgressCarreer());
+            var criticalPath = this.model.GetCriticalStudyPath(progressCarreer);
 
             //Assert 
-            var expectedList = new List<Subject>() { SubjectMocks.A, SubjectMocks.B };
-            foreach (var subject in criticalPath)
-            {
-                Assert.IsTrue(expectedList.Contains(subject));
-            }
-
+            var expectedList = new List<Subject>() { SubjectMocks.B, SubjectMocks.C };
+            CollectionAssert.AreEqual(expectedList, criticalPath);
         }
         [Test]
         public void CA4()
         {
             //Arrange
             ProgressCarreer progressCarreer = new ProgressCarreer();
+            progressCarreer.CurriculumCode = "Plan0";
             progressCarreer.ApprovedSubjects = new List<Subject>();
+            progressCarreer.ApprovedSubjects.Add(SubjectMocks.A);
             progressCarreer.ApprovedSubjects.Add(SubjectMocks.B);
+
             //Act
-            var criticalPath = this.model.GetCriticalStudyPath(new ProgressCarreer());
+            var criticalPath = this.model.GetCriticalStudyPath(progressCarreer);
 
-            //Assert
-
-            //            var criticalStudyPath = this.model.GetCriticalStudyPath(new ProgressCarreer());
-            //            criticalStudyPath.Add(SubjectMocks.A);
-
-            Assert.AreEqual(criticalPath, SubjectMocks.A);
+            //Assert 
+            var expectedList = new List<Subject>() { SubjectMocks.C };
+            CollectionAssert.AreEqual(expectedList, criticalPath);
         }
-
     }
 }
