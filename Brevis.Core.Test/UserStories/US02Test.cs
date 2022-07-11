@@ -28,7 +28,7 @@ namespace Brevis.Core.Test.UserStories
         public void CA01Test()
         {
             //Arrange
-            var path = Directory.GetCurrentDirectory() + @"\UserStories\Files\US02\CA01";
+            var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US02/CA01";
 
             //Act
             var result = discover.GetProgressCarreerTransformers(path);
@@ -44,7 +44,7 @@ namespace Brevis.Core.Test.UserStories
         public void CA02Test()
         {
             //Arrange
-            var path = Directory.GetCurrentDirectory() + @"\UserStories\Files\US02\CA02"; ;
+            var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US02/CA02"; ;
 
             //Act
             var result = discover.GetProgressCarreerTransformers(path);
@@ -61,7 +61,7 @@ namespace Brevis.Core.Test.UserStories
         public void CA03Test()
         {
             //Arrange
-            var path = Directory.GetCurrentDirectory() + @"\UserStories\Files\US02\CA03"; ;
+            var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US02/CA03"; ;
 
             //Act
             var result = discover.GetProgressCarreerTransformers(path);
