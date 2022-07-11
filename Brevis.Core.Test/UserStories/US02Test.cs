@@ -28,7 +28,7 @@ namespace Brevis.Core.Test.UserStories
         public void CA01Test()
         {
             //Arrange
-            var path = Directory.GetCurrentDirectory() + @"\UserStories\Files\US02\CA01"; ;
+            var path = Directory.GetCurrentDirectory() + @"\UserStories\Files\US02\CA01";
 
             //Act
             var result = discover.GetProgressCarreerTransformers(path);
