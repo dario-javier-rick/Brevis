@@ -5,9 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NPOI" Version="2.5.6" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <ProjectReference Include="..\Brevis.Core\Brevis.Core.csproj" />
   </ItemGroup>
-
+  
   <Target Name="OnRebuild" AfterTargets="Rebuild" Condition="'$(BuildingInsideVisualStudio)' == '' Or '$(BuildingInsideVisualStudio)' == 'true'">
     <Exec Command="copy /y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(ProjectDir)..\ImporterImplementations\$(TargetName).dll&quot; 2&gt;nul 1&gt;nul&#xD;&#xA;copy /y &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(ProjectDir)..\ImporterImplementations\$(TargetName).pdb&quot; 2&gt;nul 1&gt;nul" />
   </Target>
