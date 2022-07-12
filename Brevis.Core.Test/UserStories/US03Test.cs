@@ -48,7 +48,7 @@ namespace Brevis.Core.Test.UserStories
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US03/CA02";
 
             var assemblyToUse = "Brevis.Importer.XlsReader.XlsProgressCarreerTransformer";
-            var fileToProcess = path + "/approved_subjects.xlsx";
+            var fileToProcess = path + "/approved_subjects.xls";
 
             //Act
             var progressCarreerTransformerImplementations = discover.GetProgressCarreerTransformers(path);
