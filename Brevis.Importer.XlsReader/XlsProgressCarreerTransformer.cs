@@ -1,5 +1,4 @@
 ﻿using Brevis.Core.Models;
-using System;
 using System.IO;
 
 namespace Brevis.Importer.XlsReader
@@ -8,7 +7,8 @@ namespace Brevis.Importer.XlsReader
     {
         public ProgressCarreer Transform(Stream input)
         {
-            throw new NotImplementedException();
+            var progressCarreer = new XlsImporter().Import<ProgressCarreer>(input);
+            return progressCarreer;
         }
     }
 }
