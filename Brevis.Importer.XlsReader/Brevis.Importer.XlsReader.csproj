@@ -1,4 +1,4 @@
-﻿exited with code 127<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
@@ -17,7 +17,7 @@
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(BuildingInsideVisualStudio)' == '' Or '$(BuildingInsideVisualStudio)' == 'true'">
-    <Exec Command="copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US02\CA03\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US03\CA01\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US03\CA02\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US04\CA03\$(ProjectName).dll&quot;" />
+    <Exec Command="xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US02\CA03\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US03\CA01\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US03\CA02\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US04\CA03\$(ProjectName).dll&quot;" />
   </Target>
   
 </Project>
