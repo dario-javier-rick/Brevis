@@ -48,6 +48,15 @@
     <None Update="UserStories\Files\US02\CA03\Brevis.Importer.XlsReader.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="UserStories\Files\US03\CA01\Brevis.Importer.XlsReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US03\CA02\approved_subjects.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US03\CA02\Brevis.Importer.XlsReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
