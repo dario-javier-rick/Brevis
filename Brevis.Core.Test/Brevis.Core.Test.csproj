@@ -73,6 +73,24 @@
     <None Update="UserStories\Files\US04\CA03\Brevis.Importer.XlsReader.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="UserStories\Files\US05\CA01\approved_subjects.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US05\CA01\Brevis.Importer.CsvReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US05\CA02\approved_subjects.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US05\CA02\Brevis.Importer.CsvReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US05\CA03\approved_subjects.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US05\CA03\Brevis.Importer.CsvReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
