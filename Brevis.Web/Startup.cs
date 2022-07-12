@@ -39,23 +39,7 @@ namespace Brevis.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //Inyeccion de dependencias que configura los IProgressCarreerTransformer correspondientes.
-            //https://stackoverflow.com/questions/39174989/how-to-register-multiple-implementations-of-the-same-interface-in-asp-net-core
-
-            var rootPath = Directory.GetCurrentDirectory() + @"\..\ImporterImplementations";
-            var progressCarreerTransformerImplementations = _discover.GetProgressCarreerTransformers(rootPath);
-
-            services.AddTransient<ProgressCarreerTransformerResolver>(serviceProvider => key =>
-            {
-                var intent = progressCarreerTransformerImplementations.TryGetValue(key, out var value);
-
-                if (!intent)
-                {
-                    throw new ArgumentException($"There was an error trying to resolve an IProgressCarreerTransformer. Key: {key}");
-                }
-
-                return value;
-            });
+            RegisterProgressCareerTransformers(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,6 +61,32 @@ namespace Brevis.Web
             app.UseCookiePolicy();
 
             app.UseMvc();
+        }
+
+        private void RegisterProgressCareerTransformers(IServiceCollection services)
+        {
+            //Inyeccion de dependencias que configura los IProgressCarreerTransformer correspondientes.
+            //https://stackoverflow.com/questions/39174989/how-to-register-multiple-implementations-of-the-same-interface-in-asp-net-core
+
+            var rootPath = Directory.GetCurrentDirectory() + @"\..\ImporterImplementations";
+            var progressCarreerTransformerImplementations = _discover.GetProgressCarreerTransformers(rootPath);
+
+            services.AddTransient<ProgressCarreerImplementations>(serviceProvider =>
+            {
+                return new ProgressCarreerImplementations(progressCarreerTransformerImplementations);
+            });
+
+            services.AddTransient<ProgressCarreerTransformerResolver>(serviceProvider => key =>
+            {
+                var intent = progressCarreerTransformerImplementations.TryGetValue(key, out var value);
+
+                if (!intent)
+                {
+                    throw new ArgumentException($"There was an error trying to resolve an IProgressCarreerTransformer. Key: {key}");
+                }
+
+                return value;
+            });
         }
     }
 }

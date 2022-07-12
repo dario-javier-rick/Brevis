@@ -20,31 +20,22 @@ namespace Brevis.Web.Pages
 
         public IProgressCarreerTransformer _progressCarreerTransformer;
 
+        ProgressCarreerImplementations _progressCarreerImplementations;
         ProgressCarreerTransformerResolver _progressCarreerTransformerResolver;
-        public IndexModel(ProgressCarreerTransformerResolver progressCarreerTransformerResolver)
+
+        public IndexModel(ProgressCarreerImplementations progressCarreerImplementations,
+            ProgressCarreerTransformerResolver progressCarreerTransformerResolver)
         {
+            _progressCarreerImplementations = progressCarreerImplementations;
             _progressCarreerTransformerResolver = progressCarreerTransformerResolver;
         }
 
         public void OnGet()
         {
-            //TODO: Find a proper way to make this. The fact is that the ProgressCarreerTransformerResolver knows how to
-            //resolve them, but it can't list them all
-            var implementations = new Dictionary<string, string>();
-            implementations.Add("CSV", "Brevis.Importer.CsvReader.CsvProgressCarreerTransformer");
-            implementations.Add("XLS", "Brevis.Importer.XlsReader.XlsProgressCarreerTransformer");
-
-            foreach (var implementation in implementations)
+            foreach (var progressCarreerImplementation in _progressCarreerImplementations.registeredImplementations)
             {
-                try
-                {
-                    var progressCarreerTransformer = _progressCarreerTransformerResolver(implementation.Value);
-                    _progressCarreerTransformerImplementations.Add(implementation.Key, implementation.Value);
-                }
-                catch (ArgumentException ex)
-                {
-                    //The implementation isn't registered
-                }
+                var type = progressCarreerImplementation.Value.GetType();
+                _progressCarreerTransformerImplementations.Add(type.Assembly.GetName().Name, progressCarreerImplementation.Key);
             }
         }
 
