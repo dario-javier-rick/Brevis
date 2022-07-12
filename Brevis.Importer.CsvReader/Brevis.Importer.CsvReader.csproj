@@ -12,8 +12,8 @@
     <Exec Command="copy /y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(ProjectDir)..\ImporterImplementations\$(TargetName).dll&quot; 2&gt;nul 1&gt;nul&#xD;&#xA;copy /y &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(ProjectDir)..\ImporterImplementations\$(TargetName).pdb&quot; 2&gt;nul 1&gt;nul" />
   </Target>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US02\CA01\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US02\CA03\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US04\CA02\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US04\CA03\$(ProjectName).dll&quot;" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(BuildingInsideVisualStudio)' == '' Or '$(BuildingInsideVisualStudio)' == 'true'">
+    <Exec Command="copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US02\CA01\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US02\CA03\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US04\CA02\$(ProjectName).dll&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)Brevis.Core.Test\UserStories\Files\US04\CA03\$(ProjectName).dll&quot;" />
   </Target>
 
 </Project>
