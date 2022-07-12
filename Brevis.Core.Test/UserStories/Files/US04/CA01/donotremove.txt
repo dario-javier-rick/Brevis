@@ -1,0 +1,2 @@
+File needed to be able to commit this empty folder to git.
+The folder is used only for testing purposes.

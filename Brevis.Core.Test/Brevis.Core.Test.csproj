@@ -57,6 +57,18 @@
     <None Update="UserStories\Files\US03\CA02\Brevis.Importer.XlsReader.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="UserStories\Files\US04\CA01\donotremove.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US04\CA02\Brevis.Importer.CsvReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US04\CA03\Brevis.Importer.CsvReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserStories\Files\US04\CA03\Brevis.Importer.XlsReader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
