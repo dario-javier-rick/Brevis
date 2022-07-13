@@ -26,7 +26,7 @@ namespace Brevis.Core.Test.UserStories
         /// CA1. El discovery de la aplicación es capaz de resolver el lector de .XLSX correspondiente a la .dll integrada.
         /// </summary>
         [Test]
-        public void CA01Test()
+        public void US03_CA1()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US03/CA01"; ;
@@ -42,7 +42,7 @@ namespace Brevis.Core.Test.UserStories
         /// CA2. El archivo se procesa correctamente.
         /// </summary>
         [Test]
-        public void CA02Test()
+        public void US03_CA2()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US03/CA02";

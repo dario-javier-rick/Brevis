@@ -33,7 +33,7 @@ namespace Brevis.Core.Test.UserStories
         /// CA1. El discovery de la aplicación no resuelve ningún lector. No se muestran implementaciones dentro de la lista.
         /// </summary>
         [Test]
-        public void CA01Test()
+        public void US04_CA1()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US04/CA01"; ;
@@ -54,7 +54,7 @@ namespace Brevis.Core.Test.UserStories
         /// CA2 . El discovery de la aplicación resuelve el lector .csv. Se muestra el nombre de la .dll y la implementación correspondiente dentro de la lista.
         /// </summary>
         [Test]
-        public void CA02Test()
+        public void US04_CA2()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US04/CA02"; ;
@@ -75,7 +75,7 @@ namespace Brevis.Core.Test.UserStories
         /// CA3 . El discovery de la aplicación resuelve los lectores .csv y .xlsx. Se muestran los nombres de las .dll y las implementaciones correspondientes dentro de la lista.
         /// </summary>
         [Test]
-        public void CA03Test()
+        public void US04_CA3()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US04/CA03"; ;

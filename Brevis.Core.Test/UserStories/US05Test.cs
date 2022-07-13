@@ -29,7 +29,7 @@ namespace Brevis.Core.Test.UserStories
         /// CA1. Se devolverá un árbol que muestre el camino crítico {A,B}.
         /// </summary>
         [Test]
-        public void CA01Test()
+        public void US05_CA1()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US05/CA01";
@@ -70,7 +70,7 @@ namespace Brevis.Core.Test.UserStories
         /// CA2. Se devolverá un árbol vacío []
         /// </summary>
         [Test]
-        public void CA02Test()
+        public void US05_CA2()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US05/CA02";
@@ -113,7 +113,7 @@ namespace Brevis.Core.Test.UserStories
         /// CA3. Se devolverá un árbol que muestre el camino crítico {C}
         /// </summary>
         [Test]
-        public void CA03Test()
+        public void US05_CA3()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US05/CA03";
