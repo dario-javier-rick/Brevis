@@ -25,7 +25,7 @@ namespace Brevis.Core.Test.UserStories
         /// CA1. El discovery de la aplicación es capaz de resolver el lector de .csv correspondiente a la .dll integrada.
         /// </summary>
         [Test]
-        public void CA01Test()
+        public void US02_CA1()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US02/CA01";
@@ -41,7 +41,7 @@ namespace Brevis.Core.Test.UserStories
         /// CA2. El discovery de la aplicación no es capaz de descubrir ninguna implementación.
         /// </summary>
         [Test]
-        public void CA02Test()
+        public void US02_CA2()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US02/CA02"; ;
@@ -58,7 +58,7 @@ namespace Brevis.Core.Test.UserStories
         // La aplicación debe decidir que implementación corresponde usar de forma automática.
         /// </summary>
         [Test]
-        public void CA03Test()
+        public void US02_CA3()
         {
             //Arrange
             var path = Directory.GetCurrentDirectory() + "/UserStories/Files/US02/CA03"; ;
