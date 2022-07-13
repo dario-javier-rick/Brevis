@@ -38,7 +38,7 @@ namespace Brevis.Core.Test.UserStories
             CollectionAssert.AreEqual(expectedList, criticalPath);
         }
         [Test]
-        public void CA02Test()
+        public void US01_CA2()
         {
             //Arrange
             ProgressCarreer progressCarreer = new ProgressCarreer();
@@ -56,7 +56,7 @@ namespace Brevis.Core.Test.UserStories
             CollectionAssert.AreEqual(expectedList, criticalPath);
         }
         [Test]
-        public void CA03Test()
+        public void US01_CA3()
         {
             //Arrange
             ProgressCarreer progressCarreer = new ProgressCarreer();
@@ -72,7 +72,7 @@ namespace Brevis.Core.Test.UserStories
             CollectionAssert.AreEqual(expectedList, criticalPath);
         }
         [Test]
-        public void CA04Test()
+        public void US01_CA4()
         {
             //Arrange
             ProgressCarreer progressCarreer = new ProgressCarreer();
