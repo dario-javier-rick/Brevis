@@ -23,7 +23,7 @@ namespace Brevis.Core.Test.UserStories
         }
 
         [Test]
-        public void CA01Test()
+        public void US01_CA1()
         {
             //Arrange
             ProgressCarreer progressCarreer = new ProgressCarreer();
